@@ -1,0 +1,3 @@
+manage.azure..
+TheGateAdmin
+(pass@word)1
