@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd2e70eee6fc4f1d82c3565a4d3e9357" Name="Diagram1" ZoomLevel="41">
+        <EntityTypeShape EntityType="TheGateModel.Account" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Address" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Category" Width="1.5" PointX="14.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Contact" Width="1.5" PointX="5.375" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Employee" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.OrderLine" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Order" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.OrderState" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.OrderType" Width="1.5" PointX="12.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.Product" Width="1.5" PointX="12.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.TimeSheetLine" Width="1.5" PointX="11.875" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheGateModel.TimeSheet" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="TheGateModel.FK_Accounts_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Accounts_1" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Accounts_2" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Contacts_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Orders_3" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Contacts_2" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Contacts_3" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Products_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Employees_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Orders_2" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_TimeSheets_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_OrderLines_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_OrderLines_1" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Orders_0" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_Orders_1" ManuallyRouted="false" />
+        <AssociationConnector Association="TheGateModel.FK_TimeSheetLines_0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TheGateModel.aspnet_Membership" Width="1.5" PointX="8.25" PointY="9.375" />
+        <EntityTypeShape EntityType="TheGateModel.aspnet_Roles" Width="1.5" PointX="13.875" PointY="10.875" />
+        <EntityTypeShape EntityType="TheGateModel.aspnet_Users" Width="1.5" PointX="11.125" PointY="10.375" />
+        <AssociationConnector Association="TheGateModel.FK__aspnet_Me__UserI__66603565" />
+        <AssociationConnector Association="TheGateModel.FK_Contacts_11" />
+        <AssociationConnector Association="TheGateModel.aspnet_UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

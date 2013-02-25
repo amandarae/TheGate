@@ -1,0 +1,1277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TheGateModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TheGateModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="TheGateModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Addresses" EntityType="TheGateModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Membership" EntityType="TheGateModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="TheGateModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="TheGateModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="TheGateModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="TheGateModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="TheGateModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employees" EntityType="TheGateModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderLines" EntityType="TheGateModel.Store.OrderLines" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="TheGateModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderStates" EntityType="TheGateModel.Store.OrderStates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderTypes" EntityType="TheGateModel.Store.OrderTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="TheGateModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeSheetLines" EntityType="TheGateModel.Store.TimeSheetLines" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeSheets" EntityType="TheGateModel.Store.TimeSheets" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__66603565" Association="TheGateModel.Store.FK__aspnet_Me__UserI__66603565">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__7F2BE32F" Association="TheGateModel.Store.FK__aspnet_Us__RoleI__7F2BE32F">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__7E37BEF6" Association="TheGateModel.Store.FK__aspnet_Us__UserI__7E37BEF6">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_0" Association="TheGateModel.Store.FK_Accounts_0">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_1" Association="TheGateModel.Store.FK_Accounts_1">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_2" Association="TheGateModel.Store.FK_Accounts_2">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_0" Association="TheGateModel.Store.FK_Contacts_0">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_1" Association="TheGateModel.Store.FK_Contacts_1">
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_2" Association="TheGateModel.Store.FK_Contacts_2">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_3" Association="TheGateModel.Store.FK_Contacts_3">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_0" Association="TheGateModel.Store.FK_Employees_0">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderLines_0" Association="TheGateModel.Store.FK_OrderLines_0">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderLines_1" Association="TheGateModel.Store.FK_OrderLines_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_0" Association="TheGateModel.Store.FK_Orders_0">
+            <End Role="OrderTypes" EntitySet="OrderTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_1" Association="TheGateModel.Store.FK_Orders_1">
+            <End Role="OrderStates" EntitySet="OrderStates" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_2" Association="TheGateModel.Store.FK_Orders_2">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_3" Association="TheGateModel.Store.FK_Orders_3">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_0" Association="TheGateModel.Store.FK_Products_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheetLines_0" Association="TheGateModel.Store.FK_TimeSheetLines_0">
+            <End Role="TimeSheets" EntitySet="TimeSheets" />
+            <End Role="TimeSheetLines" EntitySet="TimeSheetLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheets_0" Association="TheGateModel.Store.FK_TimeSheets_0">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="TimeSheets" EntitySet="TimeSheets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="accountID" />
+          </Key>
+          <Property Name="accountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="accountNumber" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="primaryContact" Type="int" Nullable="false" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="fax" Type="varchar" MaxLength="10" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="generalEmail" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="int" Nullable="false" />
+          <Property Name="billingAddress" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="line1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="line2" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="state" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="zipcode" Type="varchar" Nullable="false" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="contactID" />
+          </Key>
+          <Property Name="contactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="accountID" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="shippingAddress" Type="int" />
+          <Property Name="billingAddress" Type="int" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="14" />
+          <Property Name="fax" Type="varchar" MaxLength="14" />
+          <Property Name="userID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="employeeID" />
+          </Key>
+          <Property Name="employeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="contactID" Type="int" Nullable="false" />
+          <Property Name="employeeNumber" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="salary" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="hourlyRate" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="startDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderLines">
+          <Key>
+            <PropertyRef Name="orderLineID" />
+          </Key>
+          <Property Name="orderLineID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderID" Type="int" Nullable="false" />
+          <Property Name="productID" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="orderID" />
+          </Key>
+          <Property Name="orderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="contactID" Type="int" Nullable="false" />
+          <Property Name="accountID" Type="int" />
+          <Property Name="dateMade" Type="datetime" Nullable="false" />
+          <Property Name="dateShipped" Type="datetime" Nullable="false" />
+          <Property Name="dateRecieved" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderStates">
+          <Key>
+            <PropertyRef Name="orderStateID" />
+          </Key>
+          <Property Name="orderStateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OrderTypes">
+          <Key>
+            <PropertyRef Name="orderTypeID" />
+          </Key>
+          <Property Name="orderTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="categoryID" Type="int" Nullable="false" />
+          <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="onHand" Type="int" Nullable="false" />
+          <Property Name="onOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeSheetLines">
+          <Key>
+            <PropertyRef Name="timeSheetLineID" />
+          </Key>
+          <Property Name="timeSheetLineID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeSheetID" Type="int" Nullable="false" />
+          <Property Name="hours" Type="decimal" Nullable="false" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="TimeSheets">
+          <Key>
+            <PropertyRef Name="timeSheetID" />
+          </Key>
+          <Property Name="timeSheetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="employeeID" Type="int" Nullable="false" />
+          <Property Name="periodStart" Type="datetime" Nullable="false" />
+          <Property Name="periodEnd" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__66603565">
+          <End Role="aspnet_Users" Type="TheGateModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="TheGateModel.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__7F2BE32F">
+          <End Role="aspnet_Roles" Type="TheGateModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="TheGateModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__7E37BEF6">
+          <End Role="aspnet_Users" Type="TheGateModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="TheGateModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_0">
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="primaryContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_1">
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_2">
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="billingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_0">
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="1" />
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_1">
+          <End Role="aspnet_Membership" Type="TheGateModel.Store.aspnet_Membership" Multiplicity="0..1" />
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_2">
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="shippingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_3">
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="billingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_0">
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="1" />
+          <End Role="Employees" Type="TheGateModel.Store.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderLines_0">
+          <End Role="Orders" Type="TheGateModel.Store.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderLines" Type="TheGateModel.Store.OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderID" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="orderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderLines_1">
+          <End Role="Products" Type="TheGateModel.Store.Products" Multiplicity="1" />
+          <End Role="OrderLines" Type="TheGateModel.Store.OrderLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="productID" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_0">
+          <End Role="OrderTypes" Type="TheGateModel.Store.OrderTypes" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTypes">
+              <PropertyRef Name="orderTypeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_1">
+          <End Role="OrderStates" Type="TheGateModel.Store.OrderStates" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStates">
+              <PropertyRef Name="orderStateID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_2">
+          <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_3">
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="0..1" />
+          <End Role="Orders" Type="TheGateModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_0">
+          <End Role="Categories" Type="TheGateModel.Store.Categories" Multiplicity="1" />
+          <End Role="Products" Type="TheGateModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheetLines_0">
+          <End Role="TimeSheets" Type="TheGateModel.Store.TimeSheets" Multiplicity="1" />
+          <End Role="TimeSheetLines" Type="TheGateModel.Store.TimeSheetLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeSheets">
+              <PropertyRef Name="timeSheetID" />
+            </Principal>
+            <Dependent Role="TimeSheetLines">
+              <PropertyRef Name="timeSheetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheets_0">
+          <End Role="Employees" Type="TheGateModel.Store.Employees" Multiplicity="1" />
+          <End Role="TimeSheets" Type="TheGateModel.Store.TimeSheets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="TimeSheets">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TheGateModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TheGateContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="TheGateModel.Account" />
+          <EntitySet Name="Addresses" EntityType="TheGateModel.Address" />
+          <EntitySet Name="Categories" EntityType="TheGateModel.Category" />
+          <EntitySet Name="Contacts" EntityType="TheGateModel.Contact" />
+          <EntitySet Name="Employees" EntityType="TheGateModel.Employee" />
+          <EntitySet Name="OrderLines" EntityType="TheGateModel.OrderLine" />
+          <EntitySet Name="Orders" EntityType="TheGateModel.Order" />
+          <EntitySet Name="OrderStates" EntityType="TheGateModel.OrderState" />
+          <EntitySet Name="OrderTypes" EntityType="TheGateModel.OrderType" />
+          <EntitySet Name="Products" EntityType="TheGateModel.Product" />
+          <EntitySet Name="TimeSheetLines" EntityType="TheGateModel.TimeSheetLine" />
+          <EntitySet Name="TimeSheets" EntityType="TheGateModel.TimeSheet" />
+          <AssociationSet Name="FK_Accounts_0" Association="TheGateModel.FK_Accounts_0">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_1" Association="TheGateModel.FK_Accounts_1">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_2" Association="TheGateModel.FK_Accounts_2">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_0" Association="TheGateModel.FK_Contacts_0">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_3" Association="TheGateModel.FK_Orders_3">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_2" Association="TheGateModel.FK_Contacts_2">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_3" Association="TheGateModel.FK_Contacts_3">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_0" Association="TheGateModel.FK_Products_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_0" Association="TheGateModel.FK_Employees_0">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_2" Association="TheGateModel.FK_Orders_2">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheets_0" Association="TheGateModel.FK_TimeSheets_0">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="TimeSheets" EntitySet="TimeSheets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderLines_0" Association="TheGateModel.FK_OrderLines_0">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderLines_1" Association="TheGateModel.FK_OrderLines_1">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderLines" EntitySet="OrderLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_0" Association="TheGateModel.FK_Orders_0">
+            <End Role="OrderTypes" EntitySet="OrderTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_1" Association="TheGateModel.FK_Orders_1">
+            <End Role="OrderStates" EntitySet="OrderStates" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheetLines_0" Association="TheGateModel.FK_TimeSheetLines_0">
+            <End Role="TimeSheets" EntitySet="TimeSheets" />
+            <End Role="TimeSheetLines" EntitySet="TimeSheetLines" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Membership" EntityType="TheGateModel.aspnet_Membership" />
+          <EntitySet Name="aspnet_Roles" EntityType="TheGateModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_Users" EntityType="TheGateModel.aspnet_Users" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__66603565" Association="TheGateModel.FK__aspnet_Me__UserI__66603565">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_11" Association="TheGateModel.FK_Contacts_11">
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="TheGateModel.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="accountID" />
+          </Key>
+          <Property Name="accountID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="accountNumber" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="primaryContact" Type="Int32" Nullable="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="generalEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="address" Type="Int32" Nullable="false" />
+          <Property Name="billingAddress" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Accounts" ToRole="Contacts" />
+          <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="Address2" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_0" FromRole="Accounts" ToRole="Contacts" />
+          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_3" FromRole="Accounts" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="line1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="line2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="zipcode" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_1" FromRole="Addresses" ToRole="Accounts" />
+          <NavigationProperty Name="Accounts1" Relationship="TheGateModel.FK_Accounts_2" FromRole="Addresses" ToRole="Accounts" />
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_2" FromRole="Addresses" ToRole="Contacts" />
+          <NavigationProperty Name="Contacts1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Addresses" ToRole="Contacts" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="TheGateModel.FK_Products_0" FromRole="Categories" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contactID" />
+          </Key>
+          <Property Name="contactID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="accountID" Type="Int32" Nullable="false" />
+          <Property Name="userID" Type="Guid" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shippingAddress" Type="Int32" />
+          <Property Name="billingAddress" Type="Int32" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_0" FromRole="Contacts" ToRole="Accounts" />
+          <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Contacts_0" FromRole="Contacts" ToRole="Accounts" />
+          <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Contacts_2" FromRole="Contacts" ToRole="Addresses" />
+          <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Contacts" ToRole="Addresses" />
+          <NavigationProperty Name="Employees" Relationship="TheGateModel.FK_Employees_0" FromRole="Contacts" ToRole="Employees" />
+          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_2" FromRole="Contacts" ToRole="Orders" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="TheGateModel.FK_Contacts_11" FromRole="Contact" ToRole="aspnet_Membership" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employeeID" />
+          </Key>
+          <Property Name="employeeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="contactID" Type="Int32" Nullable="false" />
+          <Property Name="employeeNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="salary" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="hourlyRate" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Employees_0" FromRole="Employees" ToRole="Contacts" />
+          <NavigationProperty Name="TimeSheets" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="Employees" ToRole="TimeSheets" />
+        </EntityType>
+        <EntityType Name="OrderLine">
+          <Key>
+            <PropertyRef Name="orderLineID" />
+          </Key>
+          <Property Name="orderLineID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="orderID" Type="Int32" Nullable="false" />
+          <Property Name="productID" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="TheGateModel.FK_OrderLines_0" FromRole="OrderLines" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="TheGateModel.FK_OrderLines_1" FromRole="OrderLines" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="orderID" />
+          </Key>
+          <Property Name="orderID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="contactID" Type="Int32" Nullable="false" />
+          <Property Name="accountID" Type="Int32" />
+          <Property Name="dateMade" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateShipped" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateRecieved" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Orders_3" FromRole="Orders" ToRole="Accounts" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Orders_2" FromRole="Orders" ToRole="Contacts" />
+          <NavigationProperty Name="OrderLines" Relationship="TheGateModel.FK_OrderLines_0" FromRole="Orders" ToRole="OrderLines" />
+          <NavigationProperty Name="OrderType" Relationship="TheGateModel.FK_Orders_0" FromRole="Orders" ToRole="OrderTypes" />
+          <NavigationProperty Name="OrderState" Relationship="TheGateModel.FK_Orders_1" FromRole="Orders" ToRole="OrderStates" />
+        </EntityType>
+        <EntityType Name="OrderState">
+          <Key>
+            <PropertyRef Name="orderStateID" />
+          </Key>
+          <Property Name="orderStateID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_1" FromRole="OrderStates" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OrderType">
+          <Key>
+            <PropertyRef Name="orderTypeID" />
+          </Key>
+          <Property Name="orderTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_0" FromRole="OrderTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="categoryID" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="onHand" Type="Int32" Nullable="false" />
+          <Property Name="onOrder" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="TheGateModel.FK_Products_0" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="OrderLines" Relationship="TheGateModel.FK_OrderLines_1" FromRole="Products" ToRole="OrderLines" />
+        </EntityType>
+        <EntityType Name="TimeSheetLine">
+          <Key>
+            <PropertyRef Name="timeSheetLineID" />
+          </Key>
+          <Property Name="timeSheetLineID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="timeSheetID" Type="Int32" Nullable="false" />
+          <Property Name="hours" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
+          <NavigationProperty Name="TimeSheet" Relationship="TheGateModel.FK_TimeSheetLines_0" FromRole="TimeSheetLines" ToRole="TimeSheets" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="timeSheetID" />
+          </Key>
+          <Property Name="timeSheetID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeID" Type="Int32" Nullable="false" />
+          <Property Name="periodStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="periodEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Employee" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="TimeSheets" ToRole="Employees" />
+          <NavigationProperty Name="TimeSheetLines" Relationship="TheGateModel.FK_TimeSheetLines_0" FromRole="TimeSheets" ToRole="TimeSheetLines" />
+        </EntityType>
+        <Association Name="FK_Accounts_0">
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="primaryContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_1">
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_2">
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="billingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_0">
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="1" />
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_3">
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="0..1" />
+          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_2">
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="shippingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_3">
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="billingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_0">
+          <End Role="Categories" Type="TheGateModel.Category" Multiplicity="1" />
+          <End Role="Products" Type="TheGateModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_0">
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
+          <End Role="Employees" Type="TheGateModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_2">
+          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheets_0">
+          <End Role="Employees" Type="TheGateModel.Employee" Multiplicity="1" />
+          <End Role="TimeSheets" Type="TheGateModel.TimeSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="TimeSheets">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderLines_0">
+          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderLines" Type="TheGateModel.OrderLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderID" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="orderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderLines_1">
+          <End Role="Products" Type="TheGateModel.Product" Multiplicity="1" />
+          <End Role="OrderLines" Type="TheGateModel.OrderLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="productID" />
+            </Principal>
+            <Dependent Role="OrderLines">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_0">
+          <End Role="OrderTypes" Type="TheGateModel.OrderType" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTypes">
+              <PropertyRef Name="orderTypeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_1">
+          <End Role="OrderStates" Type="TheGateModel.OrderState" Multiplicity="1" />
+          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStates">
+              <PropertyRef Name="orderStateID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheetLines_0">
+          <End Role="TimeSheets" Type="TheGateModel.TimeSheet" Multiplicity="1" />
+          <End Role="TimeSheetLines" Type="TheGateModel.TimeSheetLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeSheets">
+              <PropertyRef Name="timeSheetID" />
+            </Principal>
+            <Dependent Role="TimeSheetLines">
+              <PropertyRef Name="timeSheetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="TheGateModel.FK__aspnet_Me__UserI__66603565" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_11" FromRole="aspnet_Membership" ToRole="Contact" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="TheGateModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="TheGateModel.FK__aspnet_Me__UserI__66603565" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="TheGateModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__66603565">
+          <End Type="TheGateModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="TheGateModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_11">
+          <End Type="TheGateModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="TheGateModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="TheGateModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TheGateModelStoreContainer" CdmEntityContainer="TheGateContext">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="TheGateModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="primaryContact" ColumnName="primaryContact" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="generalEmail" ColumnName="generalEmail" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="billingAddress" ColumnName="billingAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="TheGateModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="line1" ColumnName="line1" />
+                <ScalarProperty Name="line2" ColumnName="line2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="TheGateModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="TheGateModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="contactID" ColumnName="contactID" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
+                <ScalarProperty Name="billingAddress" ColumnName="billingAddress" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="TheGateModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="contactID" ColumnName="contactID" />
+                <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="hourlyRate" ColumnName="hourlyRate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderLines">
+            <EntityTypeMapping TypeName="TheGateModel.OrderLine">
+              <MappingFragment StoreEntitySet="OrderLines">
+                <ScalarProperty Name="orderLineID" ColumnName="orderLineID" />
+                <ScalarProperty Name="orderID" ColumnName="orderID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="TheGateModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="orderID" ColumnName="orderID" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="contactID" ColumnName="contactID" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="dateMade" ColumnName="dateMade" />
+                <ScalarProperty Name="dateShipped" ColumnName="dateShipped" />
+                <ScalarProperty Name="dateRecieved" ColumnName="dateRecieved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStates">
+            <EntityTypeMapping TypeName="TheGateModel.OrderState">
+              <MappingFragment StoreEntitySet="OrderStates">
+                <ScalarProperty Name="orderStateID" ColumnName="orderStateID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderTypes">
+            <EntityTypeMapping TypeName="TheGateModel.OrderType">
+              <MappingFragment StoreEntitySet="OrderTypes">
+                <ScalarProperty Name="orderTypeID" ColumnName="orderTypeID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="TheGateModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="onHand" ColumnName="onHand" />
+                <ScalarProperty Name="onOrder" ColumnName="onOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSheetLines">
+            <EntityTypeMapping TypeName="TheGateModel.TimeSheetLine">
+              <MappingFragment StoreEntitySet="TimeSheetLines">
+                <ScalarProperty Name="timeSheetLineID" ColumnName="timeSheetLineID" />
+                <ScalarProperty Name="timeSheetID" ColumnName="timeSheetID" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSheets">
+            <EntityTypeMapping TypeName="TheGateModel.TimeSheet">
+              <MappingFragment StoreEntitySet="TimeSheets">
+                <ScalarProperty Name="timeSheetID" ColumnName="timeSheetID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="periodStart" ColumnName="periodStart" />
+                <ScalarProperty Name="periodEnd" ColumnName="periodEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="TheGateModel.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="TheGateModel.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="TheGateModel.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="TheGateModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

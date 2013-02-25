@@ -38,7 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,12 +119,36 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Account.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Address.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\aspnet_Membership.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\aspnet_Roles.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\aspnet_Users.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Category.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Contact.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employee.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
@@ -127,16 +157,73 @@
     <Compile Include="MasterPages\Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderLine.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderState.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderType.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\TheGate.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheGate.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TheGate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TheGate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheGate.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeSheet.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeSheetLine.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPages\Default.Master" />
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Model\TheGate.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TheGate.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\TheGate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TheGate.edmx</DependentUpon>
+      <LastGenOutput>TheGate.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\TheGate.edmx.diagram">
+      <DependentUpon>TheGate.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\TheGate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TheGate.edmx</DependentUpon>
+      <LastGenOutput>TheGate.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
