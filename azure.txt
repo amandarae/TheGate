@@ -1,3 +1,3 @@
-manage.azure..
-TheGateAdmin
-(pass@word)1
+SERVER NAME: g5adzg4phu.database.windows.net
+Username: TheGateAdmin
+Password: (pass@word)1
