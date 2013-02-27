@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cd2e70eee6fc4f1d82c3565a4d3e9357" Name="Diagram1" ZoomLevel="41">
+      <Diagram DiagramId="cd2e70eee6fc4f1d82c3565a4d3e9357" Name="Diagram1" ZoomLevel="97">
         <EntityTypeShape EntityType="TheGateModel.Account" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TheGateModel.Address" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="TheGateModel.Category" Width="1.5" PointX="14.5" PointY="6.625" IsExpanded="true" />

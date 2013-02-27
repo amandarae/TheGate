@@ -22,7 +22,7 @@ namespace TheGateWebSite.Model
         }
     
         public int contactID { get; set; }
-        public int accountID { get; set; }
+        public Nullable<int> accountID { get; set; }
         public Nullable<System.Guid> userID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }

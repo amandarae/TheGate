@@ -67,9 +67,11 @@
     <Content Include="css\ie7.css" />
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\site.css" />
     <Content Include="Default.aspx" />
     <Content Include="img\1.jpg" />
     <Content Include="img\2.jpg" />
+    <Content Include="img\285.png" />
     <Content Include="img\ad.png" />
     <Content Include="img\arrow-next.png" />
     <Content Include="img\arrow-p.png" />
@@ -116,9 +118,24 @@
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\slides.jquery.js" />
     <Content Include="js\slides.min.jquery.js" />
+    <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
     <Compile Include="Model\Account.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
@@ -140,22 +157,8 @@
     <Compile Include="Model\Contact.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Employee.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\Default.Master.cs">
-      <DependentUpon>Default.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Default.Master.designer.cs">
-      <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="Model\Order.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
@@ -170,6 +173,12 @@
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Product.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeSheet.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeSheetLine.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,11 +197,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TheGate.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\TimeSheet.cs">
-      <DependentUpon>TheGate.tt</DependentUpon>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Model\TimeSheetLine.cs">
-      <DependentUpon>TheGate.tt</DependentUpon>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +225,7 @@
       <DependentUpon>TheGate.edmx</DependentUpon>
       <LastGenOutput>TheGate.cs</LastGenOutput>
     </Content>
+    <Content Include="Admin\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

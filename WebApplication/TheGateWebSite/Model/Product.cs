@@ -25,6 +25,7 @@ namespace TheGateWebSite.Model
         public string description { get; set; }
         public int onHand { get; set; }
         public int onOrder { get; set; }
+        public string productName { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }

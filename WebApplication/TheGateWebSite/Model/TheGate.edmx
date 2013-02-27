@@ -114,17 +114,18 @@
           <Property Name="fax" Type="varchar" MaxLength="10" />
           <Property Name="website" Type="varchar" MaxLength="50" />
           <Property Name="generalEmail" Type="varchar" MaxLength="50" />
-          <Property Name="address" Type="int" Nullable="false" />
-          <Property Name="billingAddress" Type="int" Nullable="false" />
+          <Property Name="address" Type="int" />
+          <Property Name="billingAddress" Type="int" />
+          <Property Name="accountName" Type="varchar" Nullable="false" MaxLength="400" />
         </EntityType>
         <EntityType Name="Addresses">
           <Key>
             <PropertyRef Name="addressID" />
           </Key>
           <Property Name="addressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="line1" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="line2" Type="varchar" MaxLength="50" />
-          <Property Name="city" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="line1" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="line2" Type="varchar" MaxLength="500" />
+          <Property Name="city" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="state" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="zipcode" Type="varchar" Nullable="false" MaxLength="7" />
         </EntityType>
@@ -196,12 +197,12 @@
             <PropertyRef Name="contactID" />
           </Key>
           <Property Name="contactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="accountID" Type="int" Nullable="false" />
-          <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="lastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="accountID" Type="int" />
+          <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="lastName" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="shippingAddress" Type="int" />
           <Property Name="billingAddress" Type="int" />
-          <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="phone" Type="varchar" MaxLength="14" />
           <Property Name="fax" Type="varchar" MaxLength="14" />
           <Property Name="userID" Type="uniqueidentifier" />
@@ -261,9 +262,10 @@
           <Property Name="productID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="price" Type="decimal" Nullable="false" Precision="6" Scale="2" />
           <Property Name="categoryID" Type="int" Nullable="false" />
-          <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="varchar(max)" />
           <Property Name="onHand" Type="int" Nullable="false" />
           <Property Name="onOrder" Type="int" Nullable="false" />
+          <Property Name="productName" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <EntityType Name="TimeSheetLines">
           <Key>
@@ -331,7 +333,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Accounts_1">
-          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="1" />
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
@@ -343,7 +345,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Accounts_2">
-          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="1" />
+          <End Role="Addresses" Type="TheGateModel.Store.Addresses" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
@@ -355,7 +357,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Contacts_0">
-          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Store.Accounts" Multiplicity="0..1" />
           <End Role="Contacts" Type="TheGateModel.Store.Contacts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -632,22 +634,23 @@
           <Property Name="fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="generalEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="address" Type="Int32" Nullable="false" />
-          <Property Name="billingAddress" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="Int32" />
+          <Property Name="billingAddress" Type="Int32" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Accounts" ToRole="Contacts" />
           <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
           <NavigationProperty Name="Address2" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
           <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_0" FromRole="Accounts" ToRole="Contacts" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_3" FromRole="Accounts" ToRole="Orders" />
+          <Property Type="String" Name="accountName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="addressID" />
           </Key>
           <Property Name="addressID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="line1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="line2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="city" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="line1" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="line2" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="state" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="zipcode" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_1" FromRole="Addresses" ToRole="Accounts" />
@@ -668,13 +671,13 @@
             <PropertyRef Name="contactID" />
           </Key>
           <Property Name="contactID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="accountID" Type="Int32" Nullable="false" />
+          <Property Name="accountID" Type="Int32" />
           <Property Name="userID" Type="Guid" />
-          <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="shippingAddress" Type="Int32" />
           <Property Name="billingAddress" Type="Int32" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="phone" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
           <Property Name="fax" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_0" FromRole="Contacts" ToRole="Accounts" />
@@ -751,11 +754,12 @@
           <Property Name="productID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="price" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
           <Property Name="categoryID" Type="Int32" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="onHand" Type="Int32" Nullable="false" />
           <Property Name="onOrder" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="TheGateModel.FK_Products_0" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="OrderLines" Relationship="TheGateModel.FK_OrderLines_1" FromRole="Products" ToRole="OrderLines" />
+          <Property Type="String" Name="productName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TimeSheetLine">
           <Key>
@@ -790,7 +794,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Accounts_1">
-          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="1" />
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
@@ -802,7 +806,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Accounts_2">
-          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="1" />
+          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
@@ -814,7 +818,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Contacts_0">
-          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="1" />
+          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="0..1" />
           <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
@@ -1061,6 +1065,7 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="TheGateModel.Account">
               <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="accountName" ColumnName="accountName" />
                 <ScalarProperty Name="accountID" ColumnName="accountID" />
                 <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
                 <ScalarProperty Name="primaryContact" ColumnName="primaryContact" />
@@ -1165,6 +1170,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="TheGateModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="productName" ColumnName="productName" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="categoryID" ColumnName="categoryID" />

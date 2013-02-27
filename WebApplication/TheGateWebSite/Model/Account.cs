@@ -27,8 +27,9 @@ namespace TheGateWebSite.Model
         public string fax { get; set; }
         public string website { get; set; }
         public string generalEmail { get; set; }
-        public int address { get; set; }
-        public int billingAddress { get; set; }
+        public Nullable<int> address { get; set; }
+        public Nullable<int> billingAddress { get; set; }
+        public string accountName { get; set; }
     
         public virtual Contact Contact { get; set; }
         public virtual Address Address1 { get; set; }
