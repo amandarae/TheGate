@@ -9,14 +9,14 @@ using TheGateWebSite.Model;
 
 namespace TheGateWebSite
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Register : SitePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void LinkButtonRegister_Click(object sender, EventArgs e)
+        protected void ButtonRegister_Click(object sender, EventArgs e)
         {
             MembershipCreateStatus createStatus;
             MembershipUser newUser = Membership.CreateUser(TextBoxEmail.Text, TextBoxPassword.Text, TextBoxEmail.Text, null, null, true, out createStatus);
@@ -32,13 +32,12 @@ namespace TheGateWebSite
                             firstName = TextBoxFirstName.Text,
                             lastName = TextBoxLastName.Text,
                             email = TextBoxEmail.Text, 
+                            phone = txtContactPhone.Text,
+                            userID = (Guid)newUser.ProviderUserKey
                         };
 
-                        using (var db = new TheGateContext())
-                        {
-                            db.Contacts.Add(contact);
-                            db.SaveChanges();
-                        }
+                        theGateContext.Contacts.Add(contact);
+                        theGateContext.SaveChanges();
 
                         if (Membership.ValidateUser(TextBoxEmail.Text.Trim(), TextBoxPassword.Text))
                         {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TheGateWebSite
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : SitePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

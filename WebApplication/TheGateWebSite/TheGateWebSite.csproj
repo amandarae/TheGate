@@ -118,6 +118,7 @@
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\slides.jquery.js" />
     <Content Include="js\slides.min.jquery.js" />
+    <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -181,6 +182,13 @@
     <Compile Include="Model\TimeSheetLine.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\TheGate.Context.cs">
       <AutoGen>True</AutoGen>
@@ -203,6 +211,9 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SitePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
