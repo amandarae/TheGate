@@ -1,43 +1,8 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head runat="server">
-    <meta charset="utf-8">
-    <title>The Gate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/css/main.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <!--[if IE 7]>
-		  <link href="css/ie7.css" rel="stylesheet"/> 
-		<![endif]-->
+﻿<asp:contentplaceholder id="Head" runat="server" />
+<form id="master_form" runat="server">
+    <asp:scriptmanager runat="server" />
 
-    <!--[if lt IE 9]>
-		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-    <asp:ContentPlaceHolder ID="Head" runat="server" />
-</head>
-<body>
-    <form id="master_form" runat="server">
-        <asp:ScriptManager runat="server" />
-        <div class="container">
-            <div class="row" id="top-bar">
-                <div class="span8 logo">
-                    <a href="/">The Gate</a>
-                </div>
-                <div class="span4 options">
-                    <%--<ul id="languages" class="nav nav-pills pull-right">
-                    <li class="active"><a href="#" title="English">en</a></li>
-                    <li><a href="#" title="Français (French)">fr</a></li>
-                </ul>
-                <ul id="curency" class="nav nav-pills pull-right">
-                    <li class="active"><a href="#" title="Dollar">$</a></li>
-                    <li><a href="#" title="Euro">€</a></li>
-                    <li><a href="#" title="Pound">£</a></li>
-                </ul>--%>
-                    <div class="account pull-right">
-                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+    <asp:loginview id="HeadLoginView" runat="server" enableviewstate="false">
                             <AnonymousTemplate>
                                 <a href="#loginModal" role="button" data-toggle="modal" runat="server"><i class="icon-user"></i>Login</a> | <a href="~/Register.aspx" runat="server">Register</a>
                             </AnonymousTemplate>
@@ -47,175 +12,37 @@
                                 <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
                                     LogoutPageUrl="~/?action=Logoff" />
                             </LoggedInTemplate>
-                        </asp:LoginView>
-                        | <a href="cart.html"><i class="icon-shopping-cart"></i>Shopping cart</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Start Navigation -->
-            <div class="navbar navbar-inverse" id="main-menu">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <div class="nav-collapse">
-                            <ul class="nav">
-                                <li class="active"><a href="/"><i class="icon-home"></i></a></li>
-                                <li><a href="products.html">Tablet</a></li>
-                                <li><a href="products.html">Computer</a></li>
-                                <li class="dropdown">
-                                    <a href="products.html" class="dropdown-toggle">Phone <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="products.html">Nullam semper elementum</a></li>
-                                        <li><a href="products.html">Phasellus ultricies</a></li>
-                                        <li><a href="products.html">Donec laoreet dui</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="products.html">Hot Trend</a></li>
-                                <li><a href="products.html">Best Seller</a></li>
-                                <li><a href="products.html">Top Seller</a></li>
-                                <%--<li class="search_form pull-right">
-                                    <div class="navbar-search">
-                                        <input type="text" class="input-medium search-query" placeholder="search...">
-                                    </div>
-                                </li>--%>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Navigation -->
-            <!-- Start of Content -->
-            <asp:ContentPlaceHolder ID="ContentFull" runat="server">
+                        </asp:loginview>
+    | <a href="cart.html"><i class="icon-shopping-cart"></i>Shopping cart</a>
+
+    <asp:contentplaceholder id="ContentFull" runat="server">
                 <asp:ContentPlaceHolder ID="Breadcrumbs" runat="server">
-                    <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-home"></i></a><span class="divider">/</span> </li>
-                        <li class="active">About Us</li>
-                    </ul>
                 </asp:ContentPlaceHolder>
-                <div class="block_content container detail main-content">
-                    <section class="products">
-                        <asp:ContentPlaceHolder ID="PageTitleSection" runat="server">
-                            <h4 class="title header">
-                                <asp:ContentPlaceHolder ID="PageTitleText" runat="server">
-                                    <strong>About</strong> Us
-                                </asp:ContentPlaceHolder>
-                            </h4>
+                        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
                         </asp:ContentPlaceHolder>
                         <asp:ContentPlaceHolder ID="ContentMain" runat="server">
-                            <div class="row">
-                                <div class="span12">
-                                    <p>
-                                        <img alt="" src="img/products/m2.png" class="pull-left" />
-                                        <strong>The standard Lorem Ipsum passage, used since the 1500s</strong><br />
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        <strong>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</strong><br />
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                                    </p>
-                                </div>
-                            </div>
                         </asp:ContentPlaceHolder>
-                    </section>
-                </div>
-            </asp:ContentPlaceHolder>
-            <!-- End of Content -->
-        </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="span3">
-                        <h4>Information</h4>
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="span3">
-                        <h4>My Account</h4>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Order History</a></li>
-                        </ul>
-                    </div>
-                    <div class="span3">
-                        <h4 class="logo-title">Connect with us</h4>
-                    </div>
-                    <div class="span3">
-                        <div class="company_info">
-                            <h4 class="title">The Gate</h4>
-                            <p>
-                                <i class="icon-home"></i>123 Viridian Woods Drive<br />
-                                Maxis, EA<br />
-                                <i class="icon-ok-circle"></i>Tel: 800.555.1234
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <div class="modal hide" id="loginModal">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 class="title" id="myModalLabel">Existing Users Login</h3>
-            </div>
-            <asp:UpdatePanel ID="UpdatePanelLoginModal" runat="server">
-                <ContentTemplate>
-                    <asp:Login ID="Login1" runat="server" RenderOuterTable="false" DestinationPageUrl="~/Profile.aspx">
-                        <LayoutTemplate>
-                            <div class="modal-body">
-                                <div class="form">
-                                    <fieldset>
-                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
-                                        <div class="div_text">
-                                            <div class="input-prepend">
-                                                <span class="add-on"><i class="icon-user"></i></span>
-                                                <asp:TextBox ID="UserName" runat="server" CssClass="span6"></asp:TextBox>
-                                            </div>
-                                            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" CssClass="field-required" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
-                                        </div>
-                                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
-                                        <div class="div_text">
-                                            <div class="input-prepend">
-                                                <span class="add-on"><i class="icon-lock"></i></span>
-                                                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="span6"></asp:TextBox>
-                                            </div>
-                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" CssClass="field-required" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
-                                        </div>
+            </asp:contentplaceholder>
+    <asp:login id="Login1" runat="server" renderoutertable="false" destinationpageurl="~/Profile.aspx">
+                <LayoutTemplate>
+                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                    <asp:TextBox ID="UserName" runat="server" CssClass="span6"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" CssClass="field-required" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
+                                        
+                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                    <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="span6"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" CssClass="field-required" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
+                                        
+                    <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
 
-                                        <div class="button_div">
-                                            <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
-                                        </div>
-                                        <div class="field-error-inline">
-                                            <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                                        </div>
-                                        <div class="pull-right">
-                                            <br />
-                                            <strong>Forgot password?</strong>&nbsp;<a id="A1" href="~/ForgotPassword" runat="server">Click here to reset</a> - <strong>New User?</strong>&nbsp;<a id="A2" href="~/Register" runat="server">Click here to register</a>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <asp:UpdateProgress ID="UpdateProgressLoginModal" runat="server">
-                                    <ProgressTemplate>
-                                        <img src="~/img/285.png" runat="server" />
-                                    </ProgressTemplate>
-                                </asp:UpdateProgress>
-                                <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-inverse" CommandName="Login" Text="Log In" ValidationGroup="loginModal" />
-                            </div>
-                        </LayoutTemplate>
-                    </asp:Login>
-                </ContentTemplate>
-            </asp:UpdatePanel>
-        </div>
-    </form>
-    <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/slides.min.jquery.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <asp:ContentPlaceHolder ID="Scripts" runat="server" />
-</body>
-</html>
+                    <div class="field-error-inline">
+                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                    </div>
+
+                    <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-inverse" CommandName="Login" Text="Log In" ValidationGroup="loginModal" />
+                            
+                </LayoutTemplate>
+            </asp:login>
+</form>
+
+<asp:contentplaceholder id="Scripts" runat="server" />

@@ -637,8 +637,8 @@
           <Property Name="address" Type="Int32" />
           <Property Name="billingAddress" Type="Int32" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Accounts" ToRole="Contacts" />
-          <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
-          <NavigationProperty Name="Address2" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="BillingAddress" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
           <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_0" FromRole="Accounts" ToRole="Contacts" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_3" FromRole="Accounts" ToRole="Orders" />
           <Property Type="String" Name="accountName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
@@ -654,9 +654,9 @@
           <Property Name="state" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="zipcode" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_1" FromRole="Addresses" ToRole="Accounts" />
-          <NavigationProperty Name="Accounts1" Relationship="TheGateModel.FK_Accounts_2" FromRole="Addresses" ToRole="Accounts" />
-          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_2" FromRole="Addresses" ToRole="Contacts" />
-          <NavigationProperty Name="Contacts1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Addresses" ToRole="Contacts" />
+          <NavigationProperty Name="AccountsBilling" Relationship="TheGateModel.FK_Accounts_2" FromRole="Addresses" ToRole="Accounts" />
+          <NavigationProperty Name="ContactsShipping" Relationship="TheGateModel.FK_Contacts_2" FromRole="Addresses" ToRole="Contacts" />
+          <NavigationProperty Name="ContactsBilling" Relationship="TheGateModel.FK_Contacts_3" FromRole="Addresses" ToRole="Contacts" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -682,8 +682,8 @@
           <Property Name="fax" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_0" FromRole="Contacts" ToRole="Accounts" />
           <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Contacts_0" FromRole="Contacts" ToRole="Accounts" />
-          <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Contacts_2" FromRole="Contacts" ToRole="Addresses" />
-          <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Contacts" ToRole="Addresses" />
+          <NavigationProperty Name="ShippingAddress" Relationship="TheGateModel.FK_Contacts_2" FromRole="Contacts" ToRole="Addresses" />
+          <NavigationProperty Name="BillingAddress" Relationship="TheGateModel.FK_Contacts_3" FromRole="Contacts" ToRole="Addresses" />
           <NavigationProperty Name="Employees" Relationship="TheGateModel.FK_Employees_0" FromRole="Contacts" ToRole="Employees" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_2" FromRole="Contacts" ToRole="Orders" />
           <NavigationProperty Name="aspnet_Membership" Relationship="TheGateModel.FK_Contacts_11" FromRole="Contact" ToRole="aspnet_Membership" />

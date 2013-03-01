@@ -26,6 +26,16 @@ namespace TheGateWebSite
             TextBoxLastName.Text = contact.lastName;
             TextBoxEmail.Text = contact.email;
             txtContactPhone.Text = contact.phone;
+
+            if (contact.ShippingAddress != null)
+            {
+                pnlShippingAddress.Visible = true;
+            }
+
+            if (contact.BillingAddress != null)
+            {
+                pnlBillingAddress.Visible = true;
+            }
         }
 
         private void ShowErrorMessage(string p)

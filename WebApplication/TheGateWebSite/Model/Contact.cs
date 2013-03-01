@@ -34,8 +34,8 @@ namespace TheGateWebSite.Model
     
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual Account Account { get; set; }
-        public virtual Address Address { get; set; }
-        public virtual Address Address1 { get; set; }
+        public virtual Address ShippingAddress { get; set; }
+        public virtual Address BillingAddress { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual aspnet_Membership aspnet_Membership { get; set; }

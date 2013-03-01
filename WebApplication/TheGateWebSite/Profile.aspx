@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Breadcrumbs" runat="server">
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="PageTitleText" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="PageTitle" runat="server">
     My Account
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
@@ -13,7 +13,9 @@
             <p>&nbsp;</p>
         </div>
     </div>
-    <div class="form-horizontal">
+    <div class="row">
+        <div class="span8">
+            <div class="form-horizontal">
                 <fieldset>
                     <%--<legend>New User Registration</legend>--%>
                     <div class="control-group">
@@ -77,6 +79,20 @@
                     </div>
                 </fieldset>
             </div>
+        </div>
+        <div class="span4">
+            <h3>Address Details</h3>
+            <asp:HyperLink ID="lnkAddBillingAddress" runat="server" Text="Add a billing address" />
+
+            <asp:Panel ID="pnlBillingAddress" runat="server">
+                <h4>Billing Address</h4>
+            </asp:Panel>
+            <asp:Panel ID="pnlShippingAddress" runat="server">
+                <h4>Shipping Address</h4>
+            </asp:Panel>
+        </div>
+    </div>
+    
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="Scripts" runat="server">
 </asp:Content>
