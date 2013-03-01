@@ -1,12 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TheGateWebSite.Register" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="Breadcrumbs" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="PageTitleText" runat="server">
-    Register an Account
-</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentFull" runat="server">
 
     <div class="row">
@@ -16,9 +9,9 @@
 
             <div class="logreg">
                 <div class="row">
-                    <div class="span12">
+                    <div class="offset2 span8">
                         <div class="logreg-page">
-                            <h3>Register with <span class="color">Site Name</span></h3>
+                            <h3>Register with <span class="color">The Gate</span></h3>
                             <hr />
                             <div class="form">
                                 <!-- Register form -->
@@ -111,7 +104,7 @@
                                         <!-- Buttons -->
                                         <div class="form-actions">
                                             <!-- Buttons -->
-                                            <asp:Button ID="ButtonRegister" runat="server" CssClass="btn btn-large"
+                                            <asp:Button ID="ButtonRegister" runat="server" CssClass="btn btn-primary"
                                                 ValidationGroup="ValidationGroupRegister" CausesValidation="true" OnClick="ButtonRegister_Click" Text="Register"></asp:Button>
                                             <button type="reset" class="btn">Reset</button>
                                         </div>
@@ -128,28 +121,7 @@
 
                 <!-- Login ends -->
 
-                <!-- CTA starts -->
-
-                <div class="cta">
-                    <div class="row">
-                        <div class="span9">
-                            <!-- First line -->
-                            <p class="cbig">Lorem ipsum consectetur dolor sit amet, consectetur adipiscing.</p>
-                            <!-- Second line -->
-                            <p class="csmall">Duis vulputate consectetur malesuada eros nec odio consect eturegestas et netus et in dictum nisi vehicula.</p>
-                        </div>
-                        <div class="span2">
-                            <!-- Button -->
-                            <div class="button"><a href="#">Get A Free Trail</a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Ends -->
-
             </div>
         </div>
     </div>
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="Scripts" runat="server">
 </asp:Content>

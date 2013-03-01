@@ -25,7 +25,7 @@ namespace TheGateWebSite.Model
         public int contactID { get; set; }
         public Nullable<int> accountID { get; set; }
         public System.DateTime dateMade { get; set; }
-        public System.DateTime dateShipped { get; set; }
+        public Nullable<System.DateTime> dateShipped { get; set; }
         public Nullable<System.DateTime> dateRecieved { get; set; }
     
         public virtual Account Account { get; set; }

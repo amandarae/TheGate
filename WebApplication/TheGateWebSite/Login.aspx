@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TheGateWebSite.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentFull" runat="server">
     <div class="row">
         <div class="span12">
@@ -10,7 +8,7 @@
 
             <div class="logreg">
                 <div class="row">
-                    <div class="span12">
+                    <div class="offset3 span6">
                         <div class="logreg-page">
                             <h3>Sign In to <span class="color">The Gate</span></h3>
                             <hr />
@@ -23,7 +21,7 @@
                                             <div class="control-group">
                                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="control-label">User Name:</asp:Label>
                                                 <div class="controls">
-                                                    <asp:TextBox ID="UserName" runat="server" CssClass="span6"></asp:TextBox>
+                                                    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" CssClass="field-required" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="loginPage">*</asp:RequiredFieldValidator>
                                                 </div>
                                             </div>
@@ -31,7 +29,7 @@
                                             <div class="control-group">
                                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="control-label">Password:</asp:Label>
                                                 <div class="controls">
-                                                    <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="span6"></asp:TextBox>
+                                                    <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" CssClass="field-required" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="loginPage">*</asp:RequiredFieldValidator>
                                                 </div>
                                             </div>
@@ -68,12 +66,4 @@
         </div>
     </div>
 
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="Breadcrumbs" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="PageTitle" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentMain" runat="server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="Scripts" runat="server">
 </asp:Content>

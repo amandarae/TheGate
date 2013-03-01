@@ -1,8 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="TheGateWebSite.MasterPages.Default" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.Master.cs" Inherits="TheGateWebSite.MasterPages.Default" %>
 <!DOCTYPE html>
 <html lang="en">
-<head runat="server">
+<head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <!-- Title -->
@@ -91,36 +90,20 @@
                         <!-- Navigation links starts here -->
                         <ul class="nav">
                             <!-- Main menu -->
-                            <li><a href="~/" runat="server"><i class="icon-home"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages #1 <b class="caret"></b></a>
-                                <!-- Submenus -->
-                                <ul class="dropdown-menu">
-                                    <li><a href="support.html">Support</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="service.html">Service #1</a></li>
-                                    <li><a href="service1.html">Service #2</a></li>
-                                    <li><a href="pricing.html">Pricing Table</a></li>
-                                    <li><a href="careers.html">Careers</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                </ul>
-                            </li>
+                            <li><a id="A1" href="~/" runat="server"><i class="icon-home"></i></a></li>
+                            <li><a id="A2" href="~/Sample.aspx" runat="server">Sample Styles/Layouts</a></li>
                         </ul>
                         <ul class="nav pull-right">
                             <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                                 <AnonymousTemplate>
-                                    <li><a id="A1" href="~/Login.aspx" runat="server"><i class="icon-signin"></i>Sign in</a></li>
-                                    <li><a id="A2" href="~/Register.aspx" runat="server">Register</a></li>
+                                    <li><a id="A3" href="~/Login.aspx" runat="server"><i class="icon-signin"></i>&nbsp;Sign in</a></li>
+                                    <li><a id="A4" href="~/Register.aspx" runat="server">Register</a></li>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> My Account <b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>&nbsp;My Account <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/Profile.aspx" runat="server">Profile</a></li>
+                                            <li><a id="A5" href="~/Profile.aspx" runat="server">Profile</a></li>
                                             <li>
                                                 <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Sign out"
                                                     LogoutPageUrl="~/?action=Logoff" />
@@ -129,7 +112,7 @@
                                     </li>
                                 </LoggedInTemplate>
                             </asp:LoginView>
-                            <li><a href="~/Cart.aspx" runat="server"><i class="icon-shopping-cart"></i>Shopping cart</a></li>
+                            <li><a id="A6" href="~/Cart.aspx" runat="server"><i class="icon-shopping-cart"></i>&nbsp;Shopping cart</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,11 +126,24 @@
         <div class="content">
             <div class="container">
                 <asp:ContentPlaceHolder ID="ContentFull" runat="server">
-                    <asp:ContentPlaceHolder ID="Breadcrumbs" runat="server">
-                    </asp:ContentPlaceHolder>
                     <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                        <div class="row">
+                            <div class="span12">
+                                <!-- hero -->
+                                <div class="hero">
+                                    <!-- Title -->
+                                    <h3><span>
+                                        <asp:ContentPlaceHolder ID="PageTitleText" runat="server">Page Title Text</asp:ContentPlaceHolder>
+                                    </span></h3>
+                                    <asp:ContentPlaceHolder ID="PageShortDescription" runat="server">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+                        </div>
                     </asp:ContentPlaceHolder>
                     <asp:ContentPlaceHolder ID="ContentMain" runat="server">
+                        
                     </asp:ContentPlaceHolder>
                 </asp:ContentPlaceHolder>
             </div>
@@ -204,7 +200,7 @@
         </footer>
 
         <!-- JS -->
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Scripts>
                 <asp:ScriptReference Path="~/js/jquery.js" />
                 <asp:ScriptReference Path="~/js/bootstrap.js" />

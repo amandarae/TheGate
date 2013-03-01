@@ -41,7 +41,7 @@ outline: 0;
 
 ::-moz-focus-inner {border:0;}
 
-.form{
+/*.form{
 margin:10px 0px;
 }
 
@@ -77,7 +77,7 @@ padding-left: 100px;
 padding: 5px 20px 5px;
 background:transparent;
 border-top:0px;
-}
+}*/
 
 .well{
 padding:5px 10px;
@@ -420,6 +420,7 @@ border-radius:5px;
 border-bottom:3px solid #eee;
 }
 
+.service h4,
 .service h5{
 padding:3px 0px 8px 0px;
 margin:3px 0px 4px 0px;
@@ -1387,7 +1388,7 @@ text-align:center;
 }
 
 .logreg-page{
-width:450px;
+/*width:450px;*/
 margin:40px auto;
 background:#fff;
 padding:20px 10px;

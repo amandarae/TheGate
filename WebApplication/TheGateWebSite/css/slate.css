@@ -37,6 +37,8 @@ border-right:1px solid #2b333a;
 .navbar .nav > li > a{
 background: #4c5966; 
 border-left:1px solid #2b333a;
+line-height: 22px;
+height: 22px;
 }
 
 .navbar .nav > li > a:hover{

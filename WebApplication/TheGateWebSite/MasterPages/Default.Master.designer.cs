@@ -13,6 +13,15 @@ namespace TheGateWebSite.MasterPages {
     public partial class Default {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// Head control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,24 @@ namespace TheGateWebSite.MasterPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm master_form;
         
         /// <summary>
+        /// A1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        
+        /// <summary>
+        /// A2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
+        
+        /// <summary>
         /// HeadLoginView control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,15 @@ namespace TheGateWebSite.MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        
+        /// <summary>
+        /// A6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A6;
         
         /// <summary>
         /// ContentFull control.
@@ -49,15 +85,6 @@ namespace TheGateWebSite.MasterPages {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentFull;
         
         /// <summary>
-        /// Breadcrumbs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Breadcrumbs;
-        
-        /// <summary>
         /// PageTitle control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,24 @@ namespace TheGateWebSite.MasterPages {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitle;
         
         /// <summary>
+        /// PageTitleText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitleText;
+        
+        /// <summary>
+        /// PageShortDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageShortDescription;
+        
+        /// <summary>
         /// ContentMain control.
         /// </summary>
         /// <remarks>
@@ -74,6 +119,15 @@ namespace TheGateWebSite.MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// Scripts control.

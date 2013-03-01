@@ -180,6 +180,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Sample.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -279,12 +280,18 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sample.aspx.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sample.aspx.designer.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SitePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MasterPages\Default.Master" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Model\TheGate.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -308,6 +315,9 @@
     <Content Include="font-awesome\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fontawesome-webfont.woff" />
     <Content Include="img\list psd.psd" />
+    <Content Include="MasterPages\Default.Master" />
+    <None Include="Properties\PublishProfiles\thegateweb - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\thegateweb - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

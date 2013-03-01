@@ -227,6 +227,7 @@
           <Property Name="orderID" Type="int" Nullable="false" />
           <Property Name="productID" Type="int" Nullable="false" />
           <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="price" Type="decimal" Nullable="false" Precision="6" Scale="2" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -238,7 +239,7 @@
           <Property Name="contactID" Type="int" Nullable="false" />
           <Property Name="accountID" Type="int" />
           <Property Name="dateMade" Type="datetime" Nullable="false" />
-          <Property Name="dateShipped" Type="datetime" Nullable="false" />
+          <Property Name="dateShipped" Type="datetime" />
           <Property Name="dateRecieved" Type="datetime" />
         </EntityType>
         <EntityType Name="OrderStates">
@@ -246,7 +247,7 @@
             <PropertyRef Name="orderStateID" />
           </Key>
           <Property Name="orderStateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <EntityType Name="OrderTypes">
           <Key>
@@ -712,6 +713,7 @@
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="TheGateModel.FK_OrderLines_0" FromRole="OrderLines" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="TheGateModel.FK_OrderLines_1" FromRole="OrderLines" ToRole="Products" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="6" Scale="2" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -723,7 +725,7 @@
           <Property Name="contactID" Type="Int32" Nullable="false" />
           <Property Name="accountID" Type="Int32" />
           <Property Name="dateMade" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="dateShipped" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateShipped" Type="DateTime" Precision="3" />
           <Property Name="dateRecieved" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Orders_3" FromRole="Orders" ToRole="Accounts" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Orders_2" FromRole="Orders" ToRole="Contacts" />
@@ -736,7 +738,7 @@
             <PropertyRef Name="orderStateID" />
           </Key>
           <Property Name="orderStateID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="250" Unicode="false" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_1" FromRole="OrderStates" ToRole="Orders" />
         </EntityType>
         <EntityType Name="OrderType">
@@ -1130,6 +1132,7 @@
           <EntitySetMapping Name="OrderLines">
             <EntityTypeMapping TypeName="TheGateModel.OrderLine">
               <MappingFragment StoreEntitySet="OrderLines">
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="orderLineID" ColumnName="orderLineID" />
                 <ScalarProperty Name="orderID" ColumnName="orderID" />
                 <ScalarProperty Name="productID" ColumnName="productID" />

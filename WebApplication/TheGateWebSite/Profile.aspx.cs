@@ -29,12 +29,12 @@ namespace TheGateWebSite
 
             if (contact.ShippingAddress != null)
             {
-                pnlShippingAddress.Visible = true;
+                lnkBillingAddress.Text = "Edit billing address";
             }
 
             if (contact.BillingAddress != null)
             {
-                pnlBillingAddress.Visible = true;
+                lnkShippingAddress.Text = "Edit shipping address";
             }
         }
 
@@ -46,6 +46,25 @@ namespace TheGateWebSite
         protected void ButtonUpdateProfile_Click(object sender, EventArgs e)
         {
             
+        }
+
+        protected string GetOrderState(Order order)
+        {
+            var orderState = theGateContext.OrderStates.Where(os => os.orderStateID == order.state).FirstOrDefault();
+            return orderState.name;
+        }
+
+        protected string GetOrderTotalPrice(Order order)
+        {
+            var orderTotal = theGateContext.OrderLines.Where(ol => ol.orderID == order.orderID).Sum(ol => ol.quantity * ol.price);
+            return "$" + orderTotal.ToString();
+        }
+
+        protected void DataPagerOrderHistory_PreRender(object sender, EventArgs e)
+        {
+            var orderHistory = theGateContext.Orders.Where(o => o.contactID == contact.contactID).OrderBy(o => o.dateMade).ToList();
+            ListViewOrderHistory.DataSource = orderHistory;
+            ListViewOrderHistory.DataBind();
         }
     }
 }
