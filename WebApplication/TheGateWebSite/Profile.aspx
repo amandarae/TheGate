@@ -6,7 +6,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="PageTitle" runat="server">
     My Account
 </asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentFull" runat="server">
     <div class="row">
         <div class="span12">
             <p>Please complete the form below to register a new account.</p>

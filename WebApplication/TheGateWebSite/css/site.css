@@ -1,0 +1,18 @@
+﻿.aspcheckbox-group 
+{
+    display: block;
+    padding-top: 5px;
+}
+.aspcheckbox-group input
+{
+    float: left;
+    width: 18px;
+}
+.aspcheckbox-group label 
+{
+    margin-left: 18px;
+}
+
+form {
+    margin: 0;
+}

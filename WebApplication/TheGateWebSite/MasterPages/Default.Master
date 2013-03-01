@@ -1,48 +1,224 @@
-﻿<asp:contentplaceholder id="Head" runat="server" />
-<form id="master_form" runat="server">
-    <asp:scriptmanager runat="server" />
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="TheGateWebSite.MasterPages.Default" %>
 
-    <asp:loginview id="HeadLoginView" runat="server" enableviewstate="false">
-                            <AnonymousTemplate>
-                                <a href="#loginModal" role="button" data-toggle="modal" runat="server"><i class="icon-user"></i>Login</a> | <a href="~/Register.aspx" runat="server">Register</a>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <span><strong>
-                                    <a href="~/Profile.aspx" runat="server"><i class="icon-user"></i>My Account</a></strong></span> |
-                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
-                                    LogoutPageUrl="~/?action=Logoff" />
-                            </LoggedInTemplate>
-                        </asp:loginview>
-    | <a href="cart.html"><i class="icon-shopping-cart"></i>Shopping cart</a>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- Title -->
+    <title>The Gate</title>
+    <!-- Description, Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <asp:contentplaceholder id="ContentFull" runat="server">
-                <asp:ContentPlaceHolder ID="Breadcrumbs" runat="server">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Stylesheets -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/slider.css" rel="stylesheet">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/font-awesome.css">
+    <!--[if IE 7]>
+  <link rel="stylesheet" href="style/font-awesome-ie7.css">
+  <![endif]-->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- Color Stylesheet - orange, blue, pink, brown, red or green-->
+    <link href="~/css/slate.css" rel="stylesheet">
+    <link href="~/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <link href="~/css/site.css" rel="stylesheet">
+
+    <!-- HTML5 Support for IE -->
+    <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/img/favicon/favicon.png">
+    <asp:ContentPlaceHolder ID="Head" runat="server" />
+</head>
+
+<body>
+
+    <form id="master_form" runat="server">
+
+        <!-- Header starts -->
+
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="span4">
+                        <!-- Logo and site link -->
+                        <div class="logo">
+                            <h1><a href="/">The Gate<span class="color">.</span></a></h1>
+                        </div>
+                    </div>
+                    <div class="span4 offset4">
+                        <div class="list">
+                            <!-- Add your phone number here -->
+                            <div class="phone">
+                                <i class="icon-phone"></i>Phone: 123-456-7890
+                            </div>
+                            <hr>
+                            <!-- Add your email id here -->
+                            <div class="email">
+                                <i class="icon-envelope-alt"></i>Email: someting@gmail.com
+                            </div>
+                            <hr>
+                            <!-- Add your address here -->
+                            <div class="address">
+                                <i class="icon-home"></i>Address: 12, Srtington Street, NY, USA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Header ends -->
+
+        <!-- Navigation Starts -->
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <!-- Navigation links starts here -->
+                        <ul class="nav">
+                            <!-- Main menu -->
+                            <li><a href="~/" runat="server"><i class="icon-home"></i></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages #1 <b class="caret"></b></a>
+                                <!-- Submenus -->
+                                <ul class="dropdown-menu">
+                                    <li><a href="support.html">Support</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="service.html">Service #1</a></li>
+                                    <li><a href="service1.html">Service #2</a></li>
+                                    <li><a href="pricing.html">Pricing Table</a></li>
+                                    <li><a href="careers.html">Careers</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="team.html">Team</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                <AnonymousTemplate>
+                                    <li><a id="A1" href="~/Login.aspx" runat="server"><i class="icon-signin"></i>Sign in</a></li>
+                                    <li><a id="A2" href="~/Register.aspx" runat="server">Register</a></li>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> My Account <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="~/Profile.aspx" runat="server">Profile</a></li>
+                                            <li>
+                                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Sign out"
+                                                    LogoutPageUrl="~/?action=Logoff" />
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                            <li><a href="~/Cart.aspx" runat="server"><i class="icon-shopping-cart"></i>Shopping cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Ends -->
+
+        <!-- Content strats -->
+
+        <div class="content">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentFull" runat="server">
+                    <asp:ContentPlaceHolder ID="Breadcrumbs" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ContentMain" runat="server">
+                    </asp:ContentPlaceHolder>
                 </asp:ContentPlaceHolder>
-                        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
-                        </asp:ContentPlaceHolder>
-                        <asp:ContentPlaceHolder ID="ContentMain" runat="server">
-                        </asp:ContentPlaceHolder>
-            </asp:contentplaceholder>
-    <asp:login id="Login1" runat="server" renderoutertable="false" destinationpageurl="~/Profile.aspx">
-                <LayoutTemplate>
-                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
-                    <asp:TextBox ID="UserName" runat="server" CssClass="span6"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" CssClass="field-required" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
-                                        
-                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
-                    <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="span6"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" CssClass="field-required" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="loginModal">*</asp:RequiredFieldValidator>
-                                        
-                    <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
+            </div>
+        </div>
 
-                    <div class="field-error-inline">
-                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+        <!-- Content ends -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span4">
+                        <!-- Widget 1 -->
+                        <div class="widget">
+                            <h4>Twitter</h4>
+                            <!-- Too add twitter widget, goto "js" folder and open "custom.js" file and search for the word "ashokramesh90". This is my twitter username. Just replace the word with your twitter username. You are done. -->
+                            <div class="tweet"></div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <!-- widget 2 -->
+                        <div class="widget">
+                            <h4>Recent Posts</h4>
+                            <ul>
+                                <li><a href="#">Sed eu leo orci, in rhoncus puru condimentum gravida metus</a></li>
+                                <li><a href="#">Etiam at in rhoncus puru nulla ipsum, in rhoncus purus</a></li>
+                                <li><a href="#">Fusce vel magnain rhoncus puru faucibus felis dapibus facilisis</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <!-- Widget 3 -->
+                        <div class="widget">
+                            <h4>Categories</h4>
+                            <ul>
+                                <li><a href="#">Condimentum</a></li>
+                                <li><a href="#">Etiam at</a></li>
+                                <li><a href="#">Fusce vel</a></li>
+                                <li><a href="#">Vivamus</a></li>
+                                <li><a href="#">Pellentesque</a></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-inverse" CommandName="Login" Text="Log In" ValidationGroup="loginModal" />
-                            
-                </LayoutTemplate>
-            </asp:login>
-</form>
+                    <div class="span12">
+                        <hr />
+                        <p class="copy">
+                            <!-- Copyright information. -->
+                            Copyright &copy; <a href="#">The Gate</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-<asp:contentplaceholder id="Scripts" runat="server" />
+        <!-- JS -->
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/js/jquery.js" />
+                <asp:ScriptReference Path="~/js/bootstrap.js" />
+                <asp:ScriptReference Path="~/js/jquery.isotope.js" />
+                <asp:ScriptReference Path="~/js/jquery.prettyPhoto.js" />
+                <asp:ScriptReference Path="~/js/filter.js" />
+                <asp:ScriptReference Path="~/js/jquery.tweet.js" />
+                <asp:ScriptReference Path="~/js/jquery.cslider.js" />
+                <asp:ScriptReference Path="~/js/modernizr.custom.28468.js" />
+                <asp:ScriptReference Path="~/js/custom.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <asp:ContentPlaceHolder ID="Scripts" runat="server" />
+    </form>
+</body>
+</html>

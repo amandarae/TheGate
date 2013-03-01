@@ -63,7 +63,121 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\blue.css" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\brown.css" />
+    <Content Include="css\slate.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\font-awesome-ie7.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\green.css" />
+    <Content Include="css\orange.css" />
+    <Content Include="css\pink.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\red.css" />
+    <Content Include="css\site.css" />
+    <Content Include="css\slider.css" />
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="font-awesome\fontawesome-webfont.svg" />
+    <Content Include="img\ashok.jpg" />
+    <Content Include="img\bg_direction_nav.png" />
+    <Content Include="img\body-back.png" />
+    <Content Include="img\clients\amazon_b.png" />
+    <Content Include="img\clients\facebook_b.png" />
+    <Content Include="img\clients\google_b.png" />
+    <Content Include="img\clients\skype_b.png" />
+    <Content Include="img\clients\twitter_b.png" />
+    <Content Include="img\clients\youtube_b.png" />
+    <Content Include="img\dot.png" />
+    <Content Include="img\favicon\favicon.png" />
+    <Content Include="img\fback-slate.png" />
+    <Content Include="img\fback.png" />
+    <Content Include="img\header-back.png" />
+    <Content Include="img\list-b.png" />
+    <Content Include="img\list-g.png" />
+    <Content Include="img\list-o.png" />
+    <Content Include="img\list-p.png" />
+    <Content Include="img\list-r.png" />
+    <Content Include="img\list-slate.png" />
+    <Content Include="img\list-y.png" />
+    <Content Include="img\parallax\1.png" />
+    <Content Include="img\parallax\2.png" />
+    <Content Include="img\parallax\3.png" />
+    <Content Include="img\parallax\4.png" />
+    <Content Include="img\parallax\arrows.png" />
+    <Content Include="img\photos\1.jpg" />
+    <Content Include="img\photos\2.jpg" />
+    <Content Include="img\photos\3.jpg" />
+    <Content Include="img\photos\4.jpg" />
+    <Content Include="img\photos\5.jpg" />
+    <Content Include="img\photos\r1.jpg" />
+    <Content Include="img\photos\r2.jpg" />
+    <Content Include="img\photos\r3.jpg" />
+    <Content Include="img\photos\r4.jpg" />
+    <Content Include="img\photos\r5.jpg" />
+    <Content Include="img\photos\r6.jpg" />
+    <Content Include="img\photos\s1.jpg" />
+    <Content Include="img\photos\s2.jpg" />
+    <Content Include="img\photos\s3.jpg" />
+    <Content Include="img\photos\s4.jpg" />
+    <Content Include="img\photos\s5.jpg" />
+    <Content Include="img\photos\s6.jpg" />
+    <Content Include="img\photos\s7.jpg" />
+    <Content Include="img\photos\s8.jpg" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="img\prettyPhoto\default\loader.gif" />
+    <Content Include="img\prettyPhoto\default\sprite.png" />
+    <Content Include="img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min-old.js" />
+    <Content Include="js\bootstrap.old.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\filter.js" />
+    <Content Include="js\html5shim.js" />
+    <Content Include="js\jquery.cslider.js" />
+    <Content Include="js\jquery.flexslider-min.js" />
+    <Content Include="js\jquery.isotope.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\jquery.tweet.js" />
+    <Content Include="js\modernizr.custom.28468.js" />
+    <Content Include="Login.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
@@ -75,6 +189,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
@@ -183,6 +304,10 @@
       <LastGenOutput>TheGate.cs</LastGenOutput>
     </Content>
     <Content Include="Admin\Web.config" />
+    <Content Include="font-awesome\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fontawesome-webfont.woff" />
+    <Content Include="img\list psd.psd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
