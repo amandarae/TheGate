@@ -16,8 +16,8 @@ namespace TheGateWebSite.Model
     {
         public Account()
         {
-            this.Contacts = new HashSet<Contact>();
             this.Orders = new HashSet<Order>();
+            this.Contacts = new HashSet<Contact>();
         }
     
         public int accountID { get; set; }
@@ -31,10 +31,10 @@ namespace TheGateWebSite.Model
         public Nullable<int> billingAddress { get; set; }
         public string accountName { get; set; }
     
-        public virtual Contact Contact { get; set; }
         public virtual Address Address { get; set; }
         public virtual Address BillingAddress { get; set; }
-        public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual Contact Contact { get; set; }
+        public virtual ICollection<Contact> Contacts { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace TheGateWebSite.Model
         public System.DateTime startDate { get; set; }
         public Nullable<System.DateTime> endDate { get; set; }
     
-        public virtual Contact Contact { get; set; }
         public virtual ICollection<TimeSheet> TimeSheets { get; set; }
+        public virtual Contact Contact { get; set; }
     }
 }

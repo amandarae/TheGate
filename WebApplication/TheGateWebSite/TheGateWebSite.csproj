@@ -63,6 +63,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Categories.aspx" />
+    <Content Include="Admin\Products.aspx" />
     <Content Include="css\blue.css" />
     <Content Include="css\bootstrap-responsive.css" />
     <Content Include="css\bootstrap.css" />
@@ -81,6 +83,8 @@
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="font-awesome\fontawesome-webfont.svg" />
+    <Content Include="img\301.gif" />
+    <Content Include="img\301.png" />
     <Content Include="img\ashok.jpg" />
     <Content Include="img\bg_direction_nav.png" />
     <Content Include="img\body-back.png" />
@@ -92,7 +96,6 @@
     <Content Include="img\clients\youtube_b.png" />
     <Content Include="img\dot.png" />
     <Content Include="img\favicon\favicon.png" />
-    <Content Include="img\fback-slate.png" />
     <Content Include="img\fback.png" />
     <Content Include="img\header-back.png" />
     <Content Include="img\list-b.png" />
@@ -184,6 +187,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,7 +327,9 @@
       <DependentUpon>TheGate.edmx</DependentUpon>
       <LastGenOutput>TheGate.cs</LastGenOutput>
     </Content>
-    <Content Include="Admin\Web.config" />
+    <Content Include="Admin\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="font-awesome\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fontawesome-webfont.woff" />
@@ -327,6 +346,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnorderedListDataPager\UnorderedListDataPager.csproj">
+      <Project>{c791a9ed-dd8f-4e84-b053-a446a830ab88}</Project>
+      <Name>UnorderedListDataPager</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -29,9 +29,9 @@ namespace TheGateWebSite.Model
         public Nullable<System.DateTime> dateRecieved { get; set; }
     
         public virtual Account Account { get; set; }
-        public virtual Contact Contact { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual OrderType OrderType { get; set; }
         public virtual OrderState OrderState { get; set; }
+        public virtual Contact Contact { get; set; }
     }
 }

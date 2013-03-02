@@ -25,8 +25,6 @@ form {
     margin: 0;
 }
 
-
-
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -38,9 +36,9 @@ form {
   background-image: linear-gradient(to bottom, #4c5966, #414c57);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4c5966', endColorstr='#ff414c57', GradientType=0);
-  border-color: #414c57 #414c57 #2b333a;
+  border-color: #414c57 #414c57 #4c5966;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #414c57;
+  *background-color: #4c5966;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -60,9 +58,41 @@ form {
   background-color: #414c57 \9;
 }
 
+.review {
+    position: relative;
+}
 .review .form-actions {
     margin: 0;
 }
 .service {
     padding-bottom: 10px;
 }
+
+.accordion-inverse {
+    background: #414c57;
+}
+    .accordion-inverse h5,
+    .accordion-inverse a,
+    .accordion-heading i {
+        color: #fff !important;
+        text-decoration: none !important;
+    }
+
+.update-progress-back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #ffffff;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+    .update-progress-back img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -16px 0 0 -16px;
+    }
+

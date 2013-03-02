@@ -535,7 +535,6 @@
           <EntitySet Name="Accounts" EntityType="TheGateModel.Account" />
           <EntitySet Name="Addresses" EntityType="TheGateModel.Address" />
           <EntitySet Name="Categories" EntityType="TheGateModel.Category" />
-          <EntitySet Name="Contacts" EntityType="TheGateModel.Contact" />
           <EntitySet Name="Employees" EntityType="TheGateModel.Employee" />
           <EntitySet Name="OrderLines" EntityType="TheGateModel.OrderLine" />
           <EntitySet Name="Orders" EntityType="TheGateModel.Order" />
@@ -544,10 +543,6 @@
           <EntitySet Name="Products" EntityType="TheGateModel.Product" />
           <EntitySet Name="TimeSheetLines" EntityType="TheGateModel.TimeSheetLine" />
           <EntitySet Name="TimeSheets" EntityType="TheGateModel.TimeSheet" />
-          <AssociationSet Name="FK_Accounts_0" Association="TheGateModel.FK_Accounts_0">
-            <End Role="Contacts" EntitySet="Contacts" />
-            <End Role="Accounts" EntitySet="Accounts" />
-          </AssociationSet>
           <AssociationSet Name="FK_Accounts_1" Association="TheGateModel.FK_Accounts_1">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Accounts" EntitySet="Accounts" />
@@ -556,33 +551,13 @@
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Contacts_0" Association="TheGateModel.FK_Contacts_0">
-            <End Role="Accounts" EntitySet="Accounts" />
-            <End Role="Contacts" EntitySet="Contacts" />
-          </AssociationSet>
           <AssociationSet Name="FK_Orders_3" Association="TheGateModel.FK_Orders_3">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Contacts_2" Association="TheGateModel.FK_Contacts_2">
-            <End Role="Addresses" EntitySet="Addresses" />
-            <End Role="Contacts" EntitySet="Contacts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Contacts_3" Association="TheGateModel.FK_Contacts_3">
-            <End Role="Addresses" EntitySet="Addresses" />
-            <End Role="Contacts" EntitySet="Contacts" />
-          </AssociationSet>
           <AssociationSet Name="FK_Products_0" Association="TheGateModel.FK_Products_0">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employees_0" Association="TheGateModel.FK_Employees_0">
-            <End Role="Contacts" EntitySet="Contacts" />
-            <End Role="Employees" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_2" Association="TheGateModel.FK_Orders_2">
-            <End Role="Contacts" EntitySet="Contacts" />
-            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK_TimeSheets_0" Association="TheGateModel.FK_TimeSheets_0">
             <End Role="Employees" EntitySet="Employees" />
@@ -615,13 +590,38 @@
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK_Contacts_11" Association="TheGateModel.FK_Contacts_11">
-            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
-            <End Role="Contact" EntitySet="Contacts" />
-          </AssociationSet>
           <AssociationSet Name="aspnet_UsersInRoles" Association="TheGateModel.aspnet_UsersInRoles">
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <EntitySet Name="Contacts" EntityType="TheGateModel.Contact" />
+          <AssociationSet Name="FK_Accounts_0" Association="TheGateModel.FK_Accounts_0">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_0" Association="TheGateModel.FK_Contacts_0">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_2" Association="TheGateModel.FK_Contacts_2">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_3" Association="TheGateModel.FK_Contacts_3">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_1" Association="TheGateModel.FK_Contacts_1">
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_0" Association="TheGateModel.FK_Employees_0">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_2" Association="TheGateModel.FK_Orders_2">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
@@ -637,12 +637,12 @@
           <Property Name="generalEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="address" Type="Int32" />
           <Property Name="billingAddress" Type="Int32" />
-          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Accounts" ToRole="Contacts" />
           <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
           <NavigationProperty Name="BillingAddress" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
-          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_0" FromRole="Accounts" ToRole="Contacts" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_3" FromRole="Accounts" ToRole="Orders" />
           <Property Type="String" Name="accountName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Account" ToRole="Contact" />
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_0" FromRole="Account" ToRole="Contact" />
         </EntityType>
         <EntityType Name="Address">
           <Key>
@@ -656,9 +656,9 @@
           <Property Name="zipcode" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_1" FromRole="Addresses" ToRole="Accounts" />
           <NavigationProperty Name="AccountsBilling" Relationship="TheGateModel.FK_Accounts_2" FromRole="Addresses" ToRole="Accounts" />
-          <NavigationProperty Name="ContactsShipping" Relationship="TheGateModel.FK_Contacts_2" FromRole="Addresses" ToRole="Contacts" />
-          <NavigationProperty Name="ContactsBilling" Relationship="TheGateModel.FK_Contacts_3" FromRole="Addresses" ToRole="Contacts" />
-        </EntityType>
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_2" FromRole="Address" ToRole="Contact" />
+          <NavigationProperty Name="Contacts1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Address" ToRole="Contact" />
+          </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="categoryID" />
@@ -666,28 +666,6 @@
           <Property Name="categoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Products" Relationship="TheGateModel.FK_Products_0" FromRole="Categories" ToRole="Products" />
-        </EntityType>
-        <EntityType Name="Contact">
-          <Key>
-            <PropertyRef Name="contactID" />
-          </Key>
-          <Property Name="contactID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="accountID" Type="Int32" />
-          <Property Name="userID" Type="Guid" />
-          <Property Name="firstName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="lastName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="shippingAddress" Type="Int32" />
-          <Property Name="billingAddress" Type="Int32" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="phone" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
-          <Property Name="fax" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_0" FromRole="Contacts" ToRole="Accounts" />
-          <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Contacts_0" FromRole="Contacts" ToRole="Accounts" />
-          <NavigationProperty Name="ShippingAddress" Relationship="TheGateModel.FK_Contacts_2" FromRole="Contacts" ToRole="Addresses" />
-          <NavigationProperty Name="BillingAddress" Relationship="TheGateModel.FK_Contacts_3" FromRole="Contacts" ToRole="Addresses" />
-          <NavigationProperty Name="Employees" Relationship="TheGateModel.FK_Employees_0" FromRole="Contacts" ToRole="Employees" />
-          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_2" FromRole="Contacts" ToRole="Orders" />
-          <NavigationProperty Name="aspnet_Membership" Relationship="TheGateModel.FK_Contacts_11" FromRole="Contact" ToRole="aspnet_Membership" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -700,8 +678,8 @@
           <Property Name="hourlyRate" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="endDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Employees_0" FromRole="Employees" ToRole="Contacts" />
           <NavigationProperty Name="TimeSheets" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="Employees" ToRole="TimeSheets" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Employees_0" FromRole="Employee" ToRole="Contact" />
         </EntityType>
         <EntityType Name="OrderLine">
           <Key>
@@ -728,10 +706,10 @@
           <Property Name="dateShipped" Type="DateTime" Precision="3" />
           <Property Name="dateRecieved" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Orders_3" FromRole="Orders" ToRole="Accounts" />
-          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Orders_2" FromRole="Orders" ToRole="Contacts" />
           <NavigationProperty Name="OrderLines" Relationship="TheGateModel.FK_OrderLines_0" FromRole="Orders" ToRole="OrderLines" />
           <NavigationProperty Name="OrderType" Relationship="TheGateModel.FK_Orders_0" FromRole="Orders" ToRole="OrderTypes" />
           <NavigationProperty Name="OrderState" Relationship="TheGateModel.FK_Orders_1" FromRole="Orders" ToRole="OrderStates" />
+          <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Orders_2" FromRole="Order" ToRole="Contact" />
         </EntityType>
         <EntityType Name="OrderState">
           <Key>
@@ -783,18 +761,6 @@
           <NavigationProperty Name="Employee" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="TimeSheets" ToRole="Employees" />
           <NavigationProperty Name="TimeSheetLines" Relationship="TheGateModel.FK_TimeSheetLines_0" FromRole="TimeSheets" ToRole="TimeSheetLines" />
         </EntityType>
-        <Association Name="FK_Accounts_0">
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
-          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacts">
-              <PropertyRef Name="contactID" />
-            </Principal>
-            <Dependent Role="Accounts">
-              <PropertyRef Name="primaryContact" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Accounts_1">
           <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
@@ -819,18 +785,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Contacts_0">
-          <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="0..1" />
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Accounts">
-              <PropertyRef Name="accountID" />
-            </Principal>
-            <Dependent Role="Contacts">
-              <PropertyRef Name="accountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Orders_3">
           <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="0..1" />
           <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
@@ -843,30 +797,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Contacts_2">
-          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Addresses">
-              <PropertyRef Name="addressID" />
-            </Principal>
-            <Dependent Role="Contacts">
-              <PropertyRef Name="shippingAddress" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Contacts_3">
-          <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Addresses">
-              <PropertyRef Name="addressID" />
-            </Principal>
-            <Dependent Role="Contacts">
-              <PropertyRef Name="billingAddress" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Products_0">
           <End Role="Categories" Type="TheGateModel.Category" Multiplicity="1" />
           <End Role="Products" Type="TheGateModel.Product" Multiplicity="*" />
@@ -876,30 +806,6 @@
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="categoryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Employees_0">
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
-          <End Role="Employees" Type="TheGateModel.Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacts">
-              <PropertyRef Name="contactID" />
-            </Principal>
-            <Dependent Role="Employees">
-              <PropertyRef Name="contactID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Orders_2">
-          <End Role="Contacts" Type="TheGateModel.Contact" Multiplicity="1" />
-          <End Role="Orders" Type="TheGateModel.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacts">
-              <PropertyRef Name="contactID" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="contactID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1003,7 +909,7 @@
           <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" Precision="3" />
           <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="aspnet_Users" Relationship="TheGateModel.FK__aspnet_Me__UserI__66603565" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
-          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_11" FromRole="aspnet_Membership" ToRole="Contact" />
+          <NavigationProperty Name="Contacts" Relationship="TheGateModel.FK_Contacts_1" FromRole="aspnet_Membership" ToRole="Contact" />
         </EntityType>
         <EntityType Name="aspnet_Roles">
           <Key>
@@ -1042,7 +948,81 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Contacts_11">
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="TheGateModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="TheGateModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contactID" />
+          </Key>
+          <Property Type="Int32" Name="contactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="accountID" />
+          <Property Type="String" Name="firstName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="lastName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="shippingAddress" />
+          <Property Type="Int32" Name="billingAddress" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="userID" />
+          <NavigationProperty Name="Accounts" Relationship="TheGateModel.FK_Accounts_0" FromRole="Contact" ToRole="Account" />
+          <NavigationProperty Name="Account" Relationship="TheGateModel.FK_Contacts_0" FromRole="Contact" ToRole="Account" />
+          <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Contacts_2" FromRole="Contact" ToRole="Address" />
+          <NavigationProperty Name="Address1" Relationship="TheGateModel.FK_Contacts_3" FromRole="Contact" ToRole="Address" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="TheGateModel.FK_Contacts_1" FromRole="Contact" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="Employees" Relationship="TheGateModel.FK_Employees_0" FromRole="Contact" ToRole="Employee" />
+          <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_2" FromRole="Contact" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_Accounts_0">
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="TheGateModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="primaryContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_0">
+          <End Type="TheGateModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_2">
+          <End Type="TheGateModel.Address" Role="Address" Multiplicity="0..1" />
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="shippingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_3">
+          <End Type="TheGateModel.Address" Role="Address" Multiplicity="0..1" />
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="billingAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_1">
           <End Type="TheGateModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
           <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1054,9 +1034,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="aspnet_UsersInRoles">
-          <End Type="TheGateModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
-          <End Type="TheGateModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        <Association Name="FK_Employees_0">
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="TheGateModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_2">
+          <End Type="TheGateModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="TheGateModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="contactID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="contactID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -1097,22 +1097,6 @@
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="categoryID" ColumnName="categoryID" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contacts">
-            <EntityTypeMapping TypeName="TheGateModel.Contact">
-              <MappingFragment StoreEntitySet="Contacts">
-                <ScalarProperty Name="contactID" ColumnName="contactID" />
-                <ScalarProperty Name="accountID" ColumnName="accountID" />
-                <ScalarProperty Name="userID" ColumnName="userID" />
-                <ScalarProperty Name="firstName" ColumnName="firstName" />
-                <ScalarProperty Name="lastName" ColumnName="lastName" />
-                <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
-                <ScalarProperty Name="billingAddress" ColumnName="billingAddress" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="fax" ColumnName="fax" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1261,6 +1245,22 @@
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="TheGateModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="billingAddress" ColumnName="billingAddress" />
+                <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="contactID" ColumnName="contactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -43,7 +43,20 @@
 <body>
 
     <form id="master_form" runat="server">
-
+        
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/js/jquery.js" />
+                <asp:ScriptReference Path="~/js/bootstrap.js" />
+                <asp:ScriptReference Path="~/js/jquery.isotope.js" />
+                <asp:ScriptReference Path="~/js/jquery.prettyPhoto.js" />
+                <asp:ScriptReference Path="~/js/filter.js" />
+                <asp:ScriptReference Path="~/js/jquery.tweet.js" />
+                <asp:ScriptReference Path="~/js/jquery.cslider.js" />
+                <asp:ScriptReference Path="~/js/modernizr.custom.28468.js" />
+                <asp:ScriptReference Path="~/js/custom.js" />
+            </Scripts>
+        </asp:ScriptManager>
         <!-- Header starts -->
 
         <header>
@@ -94,6 +107,17 @@
                             <li><a id="A2" href="~/Sample.aspx" runat="server">Sample Styles/Layouts</a></li>
                         </ul>
                         <ul class="nav pull-right">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="~/Admin/Categories.aspx" runat="server">Categories</a></li>
+                                    <li><a href="~/Admin/Products.aspx" runat="server">Products</a></li>
+                                    <li><a href="~/Admin/Orders.aspx" runat="server">Orders</a></li>
+                                    <li><a href="~/Admin/Contacts.aspx" runat="server">Contacts</a></li>
+                                    <li><a href="~/Admin/Accounts.aspx" runat="server">Accounts</a></li>
+                                    <li><a href="~/Admin/Employees.aspx" runat="server">Employees</a></li>
+                                    <li><a href="~/Admin/Timesheets.aspx" runat="server">Timesheets</a></li>
+                                </ul>
+                            </li>
                             <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                                 <AnonymousTemplate>
                                     <li><a id="A3" href="~/Login.aspx" runat="server"><i class="icon-signin"></i>&nbsp;Sign in</a></li>
@@ -200,19 +224,6 @@
         </footer>
 
         <!-- JS -->
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-            <Scripts>
-                <asp:ScriptReference Path="~/js/jquery.js" />
-                <asp:ScriptReference Path="~/js/bootstrap.js" />
-                <asp:ScriptReference Path="~/js/jquery.isotope.js" />
-                <asp:ScriptReference Path="~/js/jquery.prettyPhoto.js" />
-                <asp:ScriptReference Path="~/js/filter.js" />
-                <asp:ScriptReference Path="~/js/jquery.tweet.js" />
-                <asp:ScriptReference Path="~/js/jquery.cslider.js" />
-                <asp:ScriptReference Path="~/js/modernizr.custom.28468.js" />
-                <asp:ScriptReference Path="~/js/custom.js" />
-            </Scripts>
-        </asp:ScriptManager>
 
         <asp:ContentPlaceHolder ID="Scripts" runat="server" />
     </form>

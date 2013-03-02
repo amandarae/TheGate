@@ -7,126 +7,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TheGateWebSite.MasterPages {
+namespace TheGateWebSite.Admin {
     
     
-    public partial class Default {
+    public partial class Categories {
         
         /// <summary>
-        /// Head1 control.
+        /// UpdatePanelCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelCategories;
         
         /// <summary>
-        /// Head control.
+        /// LabelName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
+        protected global::System.Web.UI.WebControls.Label LabelName;
         
         /// <summary>
-        /// master_form control.
+        /// TextBoxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm master_form;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxName;
         
         /// <summary>
-        /// A1 control.
+        /// RequiredFieldValidatorFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFirstName;
         
         /// <summary>
-        /// A2 control.
+        /// PanelAddAlertError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
+        protected global::System.Web.UI.WebControls.Panel PanelAddAlertError;
         
         /// <summary>
-        /// HeadLoginView control.
+        /// LabelAddAlert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.Label LabelAddAlert;
         
         /// <summary>
-        /// A6 control.
+        /// ButtonAddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A6;
+        protected global::System.Web.UI.WebControls.Button ButtonAddCategory;
         
         /// <summary>
-        /// ContentFull control.
+        /// pnlCategoryError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentFull;
+        protected global::System.Web.UI.WebControls.Panel pnlCategoryError;
         
         /// <summary>
-        /// PageTitle control.
+        /// lblCategoryErrorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitle;
+        protected global::System.Web.UI.WebControls.Label lblCategoryErrorMsg;
         
         /// <summary>
-        /// PageTitleText control.
+        /// pnlCategorySuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitleText;
+        protected global::System.Web.UI.WebControls.Panel pnlCategorySuccess;
         
         /// <summary>
-        /// PageShortDescription control.
+        /// lblCategorySuccessMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageShortDescription;
+        protected global::System.Web.UI.WebControls.Label lblCategorySuccessMsg;
         
         /// <summary>
-        /// ContentMain control.
+        /// ListViewCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
+        protected global::System.Web.UI.WebControls.ListView ListViewCategories;
         
         /// <summary>
-        /// Scripts control.
+        /// DataPagerCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Scripts;
+        protected global::UnorderedListDataPager.UnorderedListDataPager DataPagerCategories;
+        
+        /// <summary>
+        /// UpdateProgressCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgressCategories;
     }
 }

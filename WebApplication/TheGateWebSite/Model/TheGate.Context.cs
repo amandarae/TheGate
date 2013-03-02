@@ -28,7 +28,6 @@ namespace TheGateWebSite.Model
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<OrderLine> OrderLines { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -40,5 +39,6 @@ namespace TheGateWebSite.Model
         public DbSet<aspnet_Membership> aspnet_Membership { get; set; }
         public DbSet<aspnet_Roles> aspnet_Roles { get; set; }
         public DbSet<aspnet_Users> aspnet_Users { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

@@ -27,12 +27,12 @@ namespace TheGateWebSite
             TextBoxEmail.Text = contact.email;
             txtContactPhone.Text = contact.phone;
 
-            if (contact.ShippingAddress != null)
+            if (contact.Address1 != null)
             {
                 lnkBillingAddress.Text = "Edit billing address";
             }
 
-            if (contact.BillingAddress != null)
+            if (contact.Address != null)
             {
                 lnkShippingAddress.Text = "Edit shipping address";
             }
@@ -62,8 +62,7 @@ namespace TheGateWebSite
 
         protected void DataPagerOrderHistory_PreRender(object sender, EventArgs e)
         {
-            var orderHistory = theGateContext.Orders.Where(o => o.contactID == contact.contactID).OrderBy(o => o.dateMade).ToList();
-            ListViewOrderHistory.DataSource = orderHistory;
+            ListViewOrderHistory.DataSource = theGateContext.Orders.Where(o => o.contactID == contact.contactID).OrderBy(o => o.dateMade).ToList();
             ListViewOrderHistory.DataBind();
         }
     }

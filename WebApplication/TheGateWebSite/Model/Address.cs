@@ -18,8 +18,8 @@ namespace TheGateWebSite.Model
         {
             this.Accounts = new HashSet<Account>();
             this.AccountsBilling = new HashSet<Account>();
-            this.ContactsShipping = new HashSet<Contact>();
-            this.ContactsBilling = new HashSet<Contact>();
+            this.Contacts = new HashSet<Contact>();
+            this.Contacts1 = new HashSet<Contact>();
         }
     
         public int addressID { get; set; }
@@ -31,7 +31,7 @@ namespace TheGateWebSite.Model
     
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Account> AccountsBilling { get; set; }
-        public virtual ICollection<Contact> ContactsShipping { get; set; }
-        public virtual ICollection<Contact> ContactsBilling { get; set; }
+        public virtual ICollection<Contact> Contacts { get; set; }
+        public virtual ICollection<Contact> Contacts1 { get; set; }
     }
 }
