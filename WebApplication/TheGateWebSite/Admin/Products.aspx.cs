@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,6 +27,23 @@ namespace TheGateWebSite.Admin
                     categoryID = int.Parse(ddlCategories.SelectedValue),
                     price = decimal.Parse(TextBoxPrice.Text)
                 };
+
+                if (FileUploadImage.HasFile)
+                {
+                    Stream fs = FileUploadImage.PostedFile.InputStream;
+                    BinaryReader br = new BinaryReader(fs);
+                    Byte[] fileBytes = br.ReadBytes((Int32)fs.Length);
+
+                    var newFile = new TheGateWebSite.Model.File()
+                    {
+                        ContentType = FileUploadImage.PostedFile.ContentType,
+                        Size = FileUploadImage.PostedFile.ContentLength,
+                        Data = fileBytes,
+                        name = FileUploadImage.PostedFile.FileName
+                    };
+                    theGateContext.Files.Add(newFile);
+                    newProduct.imageID = newFile.fileID;
+                }
 
                 theGateContext.Products.Add(newProduct);
                 theGateContext.SaveChanges();

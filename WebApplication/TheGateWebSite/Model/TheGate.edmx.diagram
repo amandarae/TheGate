@@ -39,6 +39,8 @@
         <AssociationConnector Association="TheGateModel.FK_Contacts_1" />
         <AssociationConnector Association="TheGateModel.FK_Employees_0" />
         <AssociationConnector Association="TheGateModel.FK_Orders_2" />
+        <EntityTypeShape EntityType="TheGateModel.File" Width="1.5" PointX="14.5" PointY="1.25" />
+        <AssociationConnector Association="TheGateModel.FK_Products_1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

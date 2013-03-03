@@ -40,5 +40,6 @@ namespace TheGateWebSite.Model
         public DbSet<aspnet_Roles> aspnet_Roles { get; set; }
         public DbSet<aspnet_Users> aspnet_Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<File> Files { get; set; }
     }
 }

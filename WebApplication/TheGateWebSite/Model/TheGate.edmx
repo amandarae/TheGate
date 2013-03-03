@@ -15,6 +15,7 @@
           <EntitySet Name="Categories" EntityType="TheGateModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Contacts" EntityType="TheGateModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Employees" EntityType="TheGateModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Files" EntityType="TheGateModel.Store.Files" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="OrderLines" EntityType="TheGateModel.Store.OrderLines" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Orders" EntityType="TheGateModel.Store.Orders" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="OrderStates" EntityType="TheGateModel.Store.OrderStates" store:Type="Tables" Schema="dbo" />
@@ -92,6 +93,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Products_0" Association="TheGateModel.Store.FK_Products_0">
             <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_1" Association="TheGateModel.Store.FK_Products_1">
+            <End Role="Files" EntitySet="Files" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_TimeSheetLines_0" Association="TheGateModel.Store.FK_TimeSheetLines_0">
@@ -219,6 +224,16 @@
           <Property Name="startDate" Type="datetime" Nullable="false" />
           <Property Name="endDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="fileID" />
+          </Key>
+          <Property Name="ContentType" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Size" Type="bigint" Nullable="false" />
+          <Property Name="Data" Type="varbinary(max)" Nullable="false" />
+          <Property Name="fileID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="OrderLines">
           <Key>
             <PropertyRef Name="orderLineID" />
@@ -267,6 +282,7 @@
           <Property Name="onHand" Type="int" Nullable="false" />
           <Property Name="onOrder" Type="int" Nullable="false" />
           <Property Name="productName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="imageID" Type="int" />
         </EntityType>
         <EntityType Name="TimeSheetLines">
           <Key>
@@ -503,6 +519,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Products_1">
+          <End Role="Files" Type="TheGateModel.Store.Files" Multiplicity="0..1" />
+          <End Role="Products" Type="TheGateModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="fileID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="imageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TimeSheetLines_0">
           <End Role="TimeSheets" Type="TheGateModel.Store.TimeSheets" Multiplicity="1" />
           <End Role="TimeSheetLines" Type="TheGateModel.Store.TimeSheetLines" Multiplicity="*" />
@@ -623,6 +651,11 @@
             <End Role="Contact" EntitySet="Contacts" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="Files" EntityType="TheGateModel.File" />
+          <AssociationSet Name="FK_Products_1" Association="TheGateModel.FK_Products_1">
+            <End Role="File" EntitySet="Files" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
           <Key>
@@ -740,6 +773,8 @@
           <NavigationProperty Name="Category" Relationship="TheGateModel.FK_Products_0" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="OrderLines" Relationship="TheGateModel.FK_OrderLines_1" FromRole="Products" ToRole="OrderLines" />
           <Property Type="String" Name="productName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="imageID" />
+          <NavigationProperty Name="File" Relationship="TheGateModel.FK_Products_1" FromRole="Product" ToRole="File" />
         </EntityType>
         <EntityType Name="TimeSheetLine">
           <Key>
@@ -1058,6 +1093,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="fileID" />
+          </Key>
+          <Property Type="String" Name="ContentType" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Size" Nullable="false" />
+          <Property Type="Binary" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="fileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Products" Relationship="TheGateModel.FK_Products_1" FromRole="File" ToRole="Product" />
+          <Property Type="String" Name="name" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Products_1">
+          <End Type="TheGateModel.File" Role="File" Multiplicity="0..1" />
+          <End Type="TheGateModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="File">
+              <PropertyRef Name="fileID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="imageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1157,6 +1215,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="TheGateModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="imageID" ColumnName="imageID" />
                 <ScalarProperty Name="productName" ColumnName="productName" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="price" ColumnName="price" />
@@ -1258,6 +1317,17 @@
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="accountID" ColumnName="accountID" />
                 <ScalarProperty Name="contactID" ColumnName="contactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="TheGateModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="fileID" ColumnName="fileID" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

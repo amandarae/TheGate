@@ -69,6 +69,13 @@
                                                 </div>
                                             </div>
                                             <div class="control-group">
+                                                <asp:Label runat="server" ID="LabelImage" AssociatedControlID="FileUploadImage"
+                                                    CssClass="control-label">Image:</asp:Label>
+                                                <div class="controls">
+                                                    <asp:FileUpload ID="FileUploadImage" runat="server" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
                                                 <div class="controls">
                                                     <asp:Panel ID="PanelAddAlertError" runat="server" CssClass="alert alert-error"
                                                         Visible="false">
@@ -142,7 +149,7 @@
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ListViewProducts" />
-                        <asp:AsyncPostBackTrigger ControlID="ButtonAddProduct" />
+                        <asp:PostBackTrigger ControlID="ButtonAddProduct" />
                     </Triggers>
                 </asp:UpdatePanel>
                 <asp:UpdateProgress ID="UpdateProgressProducts" AssociatedUpdatePanelID="UpdatePanelProducts" runat="server">

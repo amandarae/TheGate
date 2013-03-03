@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Categories.aspx" />
+    <Content Include="Admin\ProductDetails.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="css\blue.css" />
     <Content Include="css\bootstrap-responsive.css" />
@@ -194,6 +195,13 @@
     <Compile Include="Admin\Categories.aspx.designer.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +215,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Image.ashx.cs">
+      <DependentUpon>Image.ashx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -244,6 +255,9 @@
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Employee.cs">
+      <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\File.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Order.cs">
@@ -335,6 +349,7 @@
     <Content Include="font-awesome\fontawesome-webfont.woff" />
     <Content Include="img\list psd.psd" />
     <Content Include="MasterPages\Default.Master" />
+    <Content Include="Handlers\Image.ashx" />
     <None Include="Properties\PublishProfiles\thegateweb - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\thegateweb - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
