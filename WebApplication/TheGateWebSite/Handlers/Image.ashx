@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Image.ashx.cs" Class="TheGateWebSite.Handlers.Image" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Image.ashx.cs" Class="TheGateWebSite.Handlers.ImageHandler" %>

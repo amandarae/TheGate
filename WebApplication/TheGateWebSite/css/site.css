@@ -96,3 +96,7 @@ form {
         margin: -16px 0 0 -16px;
     }
 
+.file-image {
+    max-height: 300px;
+    max-width: 300px;
+}

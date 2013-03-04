@@ -21,7 +21,7 @@
                             <div class="accordion-group">
                                 <div class="accordion-heading accordion-inverse">
                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#addProduct">
-                                        <h5><i class="icon-plus"></i>&nbsp;Add a new category</h5>
+                                        <h5><i class="icon-plus"></i>&nbsp;Add a new product</h5>
                                     </a>
                                 </div>
                                 <div id="addProduct" class="accordion-body collapse" style="height: 0px;">
@@ -123,7 +123,7 @@
                                     <td><%# Eval("productName") %></td>
                                     <td style="text-align: center;"><%# Eval("price").ToString() %></td>
                                     <td style="text-align: center;"><%# Eval("onHand").ToString() %></td>
-                                    <td style="text-align: center;"><%# Eval("onHand").ToString() %></td>
+                                    <td style="text-align: center;"><%# Eval("onOrder").ToString() %></td>
                                     <td style="text-align: left;">
                                         <asp:Button ID="ButtonCategoryManage" CommandName="ProductManage" CommandArgument='<%# Bind("productID") %>' runat="server" CssClass="btn btn-small" ToolTip="Manage" Text="Manage" />
                                         <asp:Button ID="ButtonCategoryDelete" CommandName="ProductDelete" CommandArgument='<%# Bind("productID") %>' runat="server" CssClass="btn btn-small" ToolTip="Delete" Text="Delete" />

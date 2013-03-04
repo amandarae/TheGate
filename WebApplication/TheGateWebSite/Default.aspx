@@ -10,32 +10,32 @@
 
             <div id="da-slider" class="da-slider">
                 <div class="da-slide">
-                    <h2>40 Cool Pages</h2>
-                    <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+                    <h2>Classic boardgames</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
                     <a href="#" class="da-link">Read more</a>
                     <div class="da-img">
-                        <img src="img/parallax/1.png" alt="image01" /></div>
+                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
                 </div>
                 <div class="da-slide">
-                    <h2>Easy management</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <h2>Electronic Games</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
                     <a href="#" class="da-link">Read more</a>
                     <div class="da-img">
-                        <img src="img/parallax/2.png" alt="image01" /></div>
+                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
                 </div>
                 <div class="da-slide">
-                    <h2>Revolution</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <h2>Hand crafted sets</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
                     <a href="#" class="da-link">Read more</a>
                     <div class="da-img">
-                        <img src="img/parallax/3.png" alt="image01" /></div>
+                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
                 </div>
                 <div class="da-slide">
-                    <h2>Quality Control</h2>
-                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                    <h2>Customer Service</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
                     <a href="#" class="da-link">Read more</a>
                     <div class="da-img">
-                        <img src="img/parallax/4.png" alt="image01" /></div>
+                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
                 </div>
                 <nav class="da-arrows">
                     <span class="da-arrows-prev"></span>
@@ -182,7 +182,7 @@
                         <div class="rpost1">
                             <!-- Image -->
                             <div class="rimg">
-                                <img src="img/photos/r1.jpg" alt="" />
+                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
                             </div>
                             <!-- Title & Para -->
                             <div class="rdetails">
@@ -195,7 +195,7 @@
                         <!-- Recent post 2. Class name should be "rpost2" -->
                         <div class="rpost2">
                             <div class="rimg">
-                                <img src="img/photos/r2.jpg" alt="" />
+                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
                             </div>
                             <div class="rdetails">
                                 <h5>Lorem ipsum</h5>
@@ -211,7 +211,7 @@
                         <!-- Recent post 3. Class name should be "rpost1" -->
                         <div class="rpost1">
                             <div class="rimg">
-                                <img src="img/photos/r3.jpg" alt="" />
+                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
                             </div>
                             <div class="rdetails">
                                 <h5>Lorem ipsum</h5>
@@ -223,7 +223,7 @@
                         <!-- Recent post 4. Class name should be "rpost2" -->
                         <div class="rpost2">
                             <div class="rimg">
-                                <img src="img/photos/r4.jpg" alt="" />
+                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
                             </div>
                             <div class="rdetails">
                                 <h5>Lorem ipsum</h5>
@@ -240,19 +240,6 @@
 
 
             <!-- Clients starts -->
-
-            <div class="row">
-                <div class="span12">
-                    <div class="clients">
-                        <img src="img/clients/amazon_b.png" alt="" />
-                        <img src="img/clients/google_b.png" alt="" />
-                        <img src="img/clients/twitter_b.png" alt="" />
-                        <img src="img/clients/facebook_b.png" alt="" />
-                        <img src="img/clients/skype_b.png" alt="" />
-                        <img src="img/clients/youtube_b.png" alt="" />
-                    </div>
-                </div>
-            </div>
 
             <!-- Clients ends -->
 

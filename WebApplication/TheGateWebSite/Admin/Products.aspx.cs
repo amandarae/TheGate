@@ -56,7 +56,7 @@ namespace TheGateWebSite.Admin
             catch (Exception ex)
             {
                 PanelAddAlertError.Visible = true;
-                LabelAddAlert.Text = "Error adding new category: " + ex.Message;
+                LabelAddAlert.Text = "Error adding new product: " + ex.Message;
             }
         }
 
