@@ -66,6 +66,7 @@
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\ProductDetails.aspx" />
     <Content Include="Admin\Products.aspx" />
+    <Content Include="Catalog.aspx" />
     <Content Include="css\blue.css" />
     <Content Include="css\bootstrap-responsive.css" />
     <Content Include="css\bootstrap.css" />
@@ -168,6 +169,7 @@
     <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="img\prettyPhoto\light_square\loader.gif" />
     <Content Include="img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="ItemDetail.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min-old.js" />
     <Content Include="js\bootstrap.old.js" />
@@ -209,6 +211,13 @@
     <Compile Include="Admin\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalog.aspx.cs">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalog.aspx.designer.cs">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +227,13 @@
     </Compile>
     <Compile Include="Handlers\Image.ashx.cs">
       <DependentUpon>Image.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetail.aspx.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemDetail.aspx.designer.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
