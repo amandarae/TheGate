@@ -12,7 +12,10 @@ namespace TheGateWebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadProducts();
+            if (!Page.IsPostBack)
+            {
+                LoadProducts();
+            }
         }
 
         private void LoadProducts()
@@ -24,6 +27,18 @@ namespace TheGateWebSite
         protected void DataPagerProducts_PreRender(object sender, EventArgs e)
         {
             LoadProducts();
+        }
+
+        protected void ProductList_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            switch (e.CommandName.ToString())
+            {
+                case "ItemDetail":
+                    Response.Redirect("ItemDetail.aspx?productID=" + e.CommandArgument);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

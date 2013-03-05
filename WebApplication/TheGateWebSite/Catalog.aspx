@@ -11,7 +11,7 @@
     <p>Complete list of all our products.</p>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
-    <asp:ListView ID="ProductList" runat="server">
+    <asp:ListView ID="ProductList" runat="server" OnItemCommand="ProductList_ItemCommand">
         <LayoutTemplate>
             <div id="portfolio">
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
@@ -33,10 +33,11 @@
                 </div>
                 <div class="controls">
                     Quantity:
-                    <asp:TextBox runat="server" ID="TextBoxQuantity" CssClass="input-mini" MaxLength="8"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="TextBoxQuantity" CssClass="input-mini" MaxLength="8" Style="width: 30px; height: 15px; margin-top: 10px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="revQuantity" ControlToValidate="TextBoxQuantity" runat="server"
                         ErrorMessage="*" ValidationGroup="ValidationGroupAddProduct" ValidationExpression="[0-9]{0,8}" ForeColor="Red" />
-                    <asp:Button runat="server" Text="Add" />
+                    <asp:Button runat="server" Text="Add" ToolTip="Add" CssClass="btn btn-mini" />
+                    <asp:Button ID="BtnDetail" CommandName="ItemDetail" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Detail" ToolTip="Detail" CssClass="btn btn-mini" />
                 </div>
             </div>
         </ItemTemplate>
@@ -45,13 +46,13 @@
         </EmptyDataTemplate>
     </asp:ListView>
     <div class="pagination">
-        <site:unorderedlistdatapager id="DataPagerProducts" runat="server" pagedcontrolid="ProductList" pagesize="8" onprerender="DataPagerProducts_PreRender">
+        <site:UnorderedListDataPager ID="DataPagerProducts" runat="server" PagedControlID="ProductList" PageSize="8" OnPreRender="DataPagerProducts_PreRender">
             <Fields>
                 <asp:NextPreviousPagerField ShowNextPageButton="false" ShowFirstPageButton="True" FirstPageText="&laquo;" PreviousPageText="&lsaquo;" />
                 <asp:NumericPagerField ButtonCount="10" PreviousPageText="&hellip;" NextPageText="&hellip;" />
                 <asp:NextPreviousPagerField ShowPreviousPageButton="false" ShowLastPageButton="True" LastPageText="&raquo;" NextPageText="&rsaquo;" />
             </Fields>
-        </site:unorderedlistdatapager>
+        </site:UnorderedListDataPager>
     </div>
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="Scripts" runat="server">
