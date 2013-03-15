@@ -187,6 +187,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Sample.aspx" />
+    <Content Include="ShoppingCart.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +334,13 @@
     </Compile>
     <Compile Include="Sample.aspx.designer.cs">
       <DependentUpon>Sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="SitePage.cs">
       <SubType>ASPXCodeBehind</SubType>

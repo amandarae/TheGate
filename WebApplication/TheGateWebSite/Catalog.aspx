@@ -36,7 +36,7 @@
                     <asp:TextBox runat="server" ID="TextBoxQuantity" CssClass="input-mini" MaxLength="8" Style="width: 30px; height: 15px; margin-top: 10px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="revQuantity" ControlToValidate="TextBoxQuantity" runat="server"
                         ErrorMessage="*" ValidationGroup="ValidationGroupAddProduct" ValidationExpression="[0-9]{0,8}" ForeColor="Red" />
-                    <asp:Button runat="server" Text="Add" ToolTip="Add" CssClass="btn btn-mini" />
+                    <asp:Button ID="BtnAdd" CommandName="AddItem" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Add" ToolTip="Add" CssClass="btn btn-mini" ValidationGroup="ValidationGroupAddProduct" />
                     <asp:Button ID="BtnDetail" CommandName="ItemDetail" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Detail" ToolTip="Detail" CssClass="btn btn-mini" />
                 </div>
             </div>
