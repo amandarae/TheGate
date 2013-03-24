@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="TheGateWebSite.Catalog" %>
+﻿
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="TheGateWebSite.Catalog" %>
 
 <%@ Register TagPrefix="site" Namespace="UnorderedListDataPager" Assembly="UnorderedListDataPager" %>
 
