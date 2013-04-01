@@ -15,19 +15,9 @@ namespace TheGateWebSite.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Request.QueryString["id"]) && !Page.IsPostBack)
+            if (string.IsNullOrEmpty(Request.QueryString["id"]))
             {
-                var a = new Model.Account()
-                    {
-                        accountName = "A",
-                        accountNumber = "A",
-                        primaryContact = 8,
-                        phone = "1"
-                    };
-                theGateContext.Accounts.Add(a);
-                theGateContext.SaveChanges();
-
-                // add contact setup
+                // add account setup
                 LoadDropdowns();
                 ButtonAccountAction.Text = "Add Account";
                 ButtonAccountAction.Click += ButtonAccountActionAdd_Click;
