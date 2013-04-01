@@ -25,6 +25,7 @@ namespace TheGateWebSite
             if (!Page.IsPostBack)
             {
                 LoadProducts();
+                LoadCatagories();
             }
         }
 
@@ -35,10 +36,23 @@ namespace TheGateWebSite
 
         }
 
+        private void LoadCatagories()
+        {
+            filterLV.DataSource = theGateContext.Categories.OrderBy(c => c.name).ToList();
+            filterLV.DataBind();
+        }
+
         private void LoadProductsSearch()
         {
             string productSearch = Session["searchField"].ToString();
             ProductList.DataSource = theGateContext.Products.Where(p => p.productName == productSearch).ToList();
+            ProductList.DataBind();
+        }
+
+        private void LoadFilter()
+        {
+            int filterID = Convert.ToInt32(Session["filterID"].ToString());
+            ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID).ToList();
             ProductList.DataBind();
         }
 
@@ -51,6 +65,17 @@ namespace TheGateWebSite
                     LoadProductsSearch();
                 }
                 else 
+                {
+                    LoadProducts();
+                }
+            }
+            else if (Session["filterOnOff"] != null)
+            {
+                if (Session["filterOnOff"].ToString() == "true")
+                {
+                    LoadFilter();
+                }
+                else
                 {
                     LoadProducts();
                 }
@@ -114,6 +139,26 @@ namespace TheGateWebSite
         {
             Session["searchOnOff"] = "false";
             LoadProducts();
+        }
+
+        protected void filterLV_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            switch (e.CommandName.ToString())
+            {
+                case "Filter":
+                    int filterID = Convert.ToInt32(e.CommandArgument.ToString());
+                    Session["filterID"] = filterID;
+                    ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID).ToList();
+                    ProductList.DataBind();
+                    Session["filterOnOff"] = "true";
+                    break;
+                case "clearFilter":
+                    Session["filterOnOff"] = "false";
+                    LoadProducts();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

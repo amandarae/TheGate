@@ -1,6 +1,4 @@
-﻿
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="TheGateWebSite.Catalog" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Default.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="TheGateWebSite.Catalog" %>
 
 <%@ Register TagPrefix="site" Namespace="UnorderedListDataPager" Assembly="UnorderedListDataPager" %>
 
@@ -39,6 +37,24 @@
         </div>
 
     </div>
+
+    <asp:ListView ID="filterLV" runat="server" OnItemCommand="filterLV_ItemCommand">
+        <LayoutTemplate>
+            <h6>Filter by Category:</h6>
+            <div class="button">
+                <ul id="filters">
+                    <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                    <li><asp:Button runat="server" ID="clearnFilterBtn" CommandName="clearFilter" CssClass="btn btn-primary" Text="Clear Filter" CommandArgument="clearFilter" /></li>
+                </ul>
+            </div>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <li>
+                <asp:Button runat="server" ID="FilterCatBtn" CommandName="Filter" CssClass="btn" Text='<%# Eval("name") %>' CommandArgument='<%# Bind("categoryID") %>' /></li>
+        </ItemTemplate>
+        <EmptyDataTemplate>
+        </EmptyDataTemplate>
+    </asp:ListView>
 
     <asp:ListView ID="ProductList" runat="server" OnItemCommand="ProductList_ItemCommand">
         <LayoutTemplate>
