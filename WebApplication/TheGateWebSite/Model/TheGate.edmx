@@ -670,8 +670,8 @@
           <Property Name="generalEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="address" Type="Int32" />
           <Property Name="billingAddress" Type="Int32" />
-          <NavigationProperty Name="Address" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
-          <NavigationProperty Name="BillingAddress" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="AddressA" Relationship="TheGateModel.FK_Accounts_1" FromRole="Accounts" ToRole="Addresses" />
+          <NavigationProperty Name="BillingAddressA" Relationship="TheGateModel.FK_Accounts_2" FromRole="Accounts" ToRole="Addresses" />
           <NavigationProperty Name="Orders" Relationship="TheGateModel.FK_Orders_3" FromRole="Accounts" ToRole="Orders" />
           <Property Type="String" Name="accountName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Accounts_0" FromRole="Account" ToRole="Contact" />

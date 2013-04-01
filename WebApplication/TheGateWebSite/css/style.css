@@ -300,19 +300,19 @@ transition:background 1s ease;
 
 /* Content */
 
-.content ul{
+/*.content ul{
 list-style-type: none !important;
 padding: 0px;
 margin: 0px;
-}
+}*/
 
-.content ul li{
+/*.content ul li{
 background-repeat: no-repeat;
 background-position: 2px 7px; 
 background-size:13px 13px;
 padding:4px 0px;
 padding-left: 21px; 
-}
+}*/
 
 .flexslider  ul li{
 background-image:none;

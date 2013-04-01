@@ -25,23 +25,22 @@ form {
     margin: 0;
 }
 
-.btn-primary {
+.field-required {
+    color: #f00;
+    margin: 0 10px;
+}
+
+/*.btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #4c5966;
-  background-image: -moz-linear-gradient(top, #4c5966, #414c57);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4c5966), to(#414c57));
-  background-image: -webkit-linear-gradient(top, #4c5966, #414c57);
-  background-image: -o-linear-gradient(top, #4c5966, #414c57);
-  background-image: linear-gradient(to bottom, #4c5966, #414c57);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4c5966', endColorstr='#ff414c57', GradientType=0);
-  border-color: #414c57 #414c57 #4c5966;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #4c5966;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  *background-image: linear-gradient(to bottom, #4c5966, #414c57);
+    border-left-color: #414c57;
+    border-right-color: #414c57;
+    border-top-color: #414c57;
+    border-bottom-color: #4c5966;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -56,7 +55,7 @@ form {
 .btn-primary:active,
 .btn-primary.active {
   background-color: #414c57 \9;
-}
+}*/
 
 .review {
     position: relative;
@@ -99,4 +98,8 @@ form {
 .file-image {
     max-height: 300px;
     max-width: 300px;
+}
+
+.navbar-form {
+    margin-bottom: 20px;
 }

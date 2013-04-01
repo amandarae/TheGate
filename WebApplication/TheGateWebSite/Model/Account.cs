@@ -31,8 +31,8 @@ namespace TheGateWebSite.Model
         public Nullable<int> billingAddress { get; set; }
         public string accountName { get; set; }
     
-        public virtual Address Address { get; set; }
-        public virtual Address BillingAddress { get; set; }
+        public virtual Address AddressA { get; set; }
+        public virtual Address BillingAddressA { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual Contact Contact { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
