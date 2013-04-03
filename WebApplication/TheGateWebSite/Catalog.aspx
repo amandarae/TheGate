@@ -8,7 +8,6 @@
     Product Listing
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="PageShortDescription" runat="server">
-    <asp:Label runat="server" ID="testing"></asp:Label>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
     <div class="accordion" id="accordion2">

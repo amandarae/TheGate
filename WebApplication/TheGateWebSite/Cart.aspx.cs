@@ -54,10 +54,19 @@ namespace TheGateWebSite
                 ShoppingCartLV.DataSource = dList;
                 ShoppingCartLV.DataBind();
                 GrandTotal = "Grand Total:  $" + gt;
+                if (gt == 0)
+                {
+                    HyperLinkCheckout.Enabled = false;
+                }
+                else
+                {
+                    HyperLinkCheckout.Enabled = true;
+                }
             }
             catch
             {
                 BlankCart.Text = "You have no items in your cart!";
+                HyperLinkCheckout.Enabled = false;
             }
         }
 

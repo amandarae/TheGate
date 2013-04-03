@@ -72,6 +72,7 @@
     <Content Include="Admin\Products.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Catalog.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="css\blue.css" />
     <Content Include="css\bootstrap-responsive.css" />
     <Content Include="css\bootstrap.css" />
@@ -189,6 +190,7 @@
     <Content Include="js\jquery.tweet.js" />
     <Content Include="js\modernizr.custom.28468.js" />
     <Content Include="Login.aspx" />
+    <Content Include="OrderSuccess.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Sample.aspx" />
@@ -257,6 +259,13 @@
     </Compile>
     <Compile Include="Catalog.aspx.designer.cs">
       <DependentUpon>Catalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -336,6 +345,13 @@
     </Compile>
     <Compile Include="Model\TimeSheetLine.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.designer.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

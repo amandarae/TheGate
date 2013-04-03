@@ -42,7 +42,7 @@
         <h4><%Response.Write(GrandTotal); %></h4>
         <br />
         <asp:HyperLink ID="HyperLinkReturn" runat="server" CssClass="btn" Text="Return to Catalog" NavigateUrl="Catalog.aspx" />
-        <asp:HyperLink ID="HyperLinkCheckout" runat="server" CssClass="btn" Text="Checkout" NavigateUrl="Catalog.aspx" />
+        <asp:HyperLink ID="HyperLinkCheckout" runat="server" CssClass="btn" Text="Checkout" NavigateUrl="Checkout.aspx" />
     </div>
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="Scripts" runat="server">
