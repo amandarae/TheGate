@@ -7,135 +7,108 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TheGateWebSite.MasterPages {
+namespace TheGateWebSite.Admin {
     
     
-    public partial class Default {
+    public partial class Orders {
         
         /// <summary>
-        /// Head1 control.
+        /// UpdatePanelOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelOrders;
         
         /// <summary>
-        /// Head control.
+        /// hyperlinkAddContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlinkAddContact;
         
         /// <summary>
-        /// master_form control.
+        /// textboxSearchQuery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm master_form;
+        protected global::System.Web.UI.WebControls.TextBox textboxSearchQuery;
         
         /// <summary>
-        /// A1 control.
+        /// buttonSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.Button buttonSearch;
         
         /// <summary>
-        /// A7 control.
+        /// pnlError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A7;
+        protected global::System.Web.UI.WebControls.Panel pnlError;
         
         /// <summary>
-        /// A2 control.
+        /// lblErrorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
+        protected global::System.Web.UI.WebControls.Label lblErrorMsg;
         
         /// <summary>
-        /// HeadLoginView control.
+        /// pnlSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.Panel pnlSuccess;
         
         /// <summary>
-        /// A6 control.
+        /// lblSuccessMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A6;
+        protected global::System.Web.UI.WebControls.Label lblSuccessMsg;
         
         /// <summary>
-        /// ContentFull control.
+        /// ListViewOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentFull;
+        protected global::System.Web.UI.WebControls.ListView ListViewOrders;
         
         /// <summary>
-        /// PageTitle control.
+        /// DataPagerOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitle;
+        protected global::UnorderedListDataPager.UnorderedListDataPager DataPagerOrders;
         
         /// <summary>
-        /// PageTitleText control.
+        /// UpdateProgressOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitleText;
-        
-        /// <summary>
-        /// PageShortDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageShortDescription;
-        
-        /// <summary>
-        /// ContentMain control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
-        
-        /// <summary>
-        /// Scripts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Scripts;
+        protected global::System.Web.UI.UpdateProgress UpdateProgressOrders;
     }
 }

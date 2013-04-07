@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="PageTitleText" runat="server">
-    <h1>Your order has been successfully placed!</h1>
+    Your order has been successfully placed!
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="PageShortDescription" runat="server">
             <asp:HyperLink ID="HyperLinkReturn" runat="server" CssClass="btn" Text="Return to Catalog" NavigateUrl="Catalog.aspx" />

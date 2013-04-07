@@ -68,6 +68,8 @@
     <Content Include="Admin\ContactDetails.aspx" />
     <Content Include="Admin\Accounts.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
+    <Content Include="Admin\OrderDetails.aspx" />
+    <Content Include="Admin\Orders.aspx" />
     <Content Include="Admin\ProductDetails.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Cart.aspx" />
@@ -231,6 +233,20 @@
     </Compile>
     <Compile Include="Admin\AccountDetails.aspx.designer.cs">
       <DependentUpon>AccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
