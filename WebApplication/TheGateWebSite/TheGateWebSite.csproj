@@ -68,8 +68,8 @@
     <Content Include="Admin\ContactDetails.aspx" />
     <Content Include="Admin\Accounts.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
-    <Content Include="Admin\EmployeeDetails.aspx" />
-    <Content Include="Admin\Employees.aspx" />
+    <Content Include="Admin\Management\EmployeeDetails.aspx" />
+    <Content Include="Admin\Management\Employees.aspx" />
     <Content Include="Admin\OrderDetails.aspx" />
     <Content Include="Admin\Orders.aspx" />
     <Content Include="Admin\ProductDetails.aspx" />
@@ -254,18 +254,18 @@
     <Compile Include="Admin\AccountDetails.aspx.designer.cs">
       <DependentUpon>AccountDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\EmployeeDetails.aspx.cs">
+    <Compile Include="Admin\Management\EmployeeDetails.aspx.cs">
       <DependentUpon>EmployeeDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\EmployeeDetails.aspx.designer.cs">
+    <Compile Include="Admin\Management\EmployeeDetails.aspx.designer.cs">
       <DependentUpon>EmployeeDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Employees.aspx.cs">
+    <Compile Include="Admin\Management\Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Employees.aspx.designer.cs">
+    <Compile Include="Admin\Management\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OrderDetails.aspx.cs">
@@ -472,6 +472,9 @@
     <Content Include="img\list psd.psd" />
     <Content Include="MasterPages\Default.Master" />
     <Content Include="Handlers\Image.ashx" />
+    <Content Include="Admin\Management\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\thegateweb - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\thegateweb - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

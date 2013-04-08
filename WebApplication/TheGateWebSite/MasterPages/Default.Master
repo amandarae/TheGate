@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.Master.cs" Inherits="TheGateWebSite.MasterPages.Default" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head id="Head1" runat="server">
@@ -43,7 +44,7 @@
 <body>
 
     <form id="master_form" runat="server">
-        
+
         <asp:ScriptManager runat="server">
             <Scripts>
                 <asp:ScriptReference Path="~/js/jquery.js" />
@@ -105,26 +106,32 @@
                             <!-- Main menu -->
                             <li><a id="A1" href="~/" runat="server"><i class="icon-home"></i></a></li>
                             <li><a id="A7" href="~/Catalog.aspx" runat="server">Product Catalog</a></li>
-                            <li><a id="A2" href="~/Sample.aspx" runat="server">Sample Styles/Layouts</a></li>
                         </ul>
                         <ul class="nav pull-right">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="~/Admin/Categories.aspx" runat="server">Categories</a></li>
-                                    <li><a href="~/Admin/Products.aspx" runat="server">Products</a></li>
-                                    <li><a href="~/Admin/Orders.aspx" runat="server">Orders</a></li>
-                                    <li><a href="~/Admin/Contacts.aspx" runat="server">Contacts</a></li>
-                                    <li><a href="~/Admin/Accounts.aspx" runat="server">Accounts</a></li>
-                                    <li><a href="~/Admin/Employees.aspx" runat="server">Employees</a></li>
-                                    <li><a href="~/Admin/Timesheets.aspx" runat="server">Timesheets</a></li>
-                                </ul>
-                            </li>
+
                             <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                                 <AnonymousTemplate>
                                     <li><a id="A3" href="~/Login.aspx" runat="server"><i class="icon-signin"></i>&nbsp;Sign in</a></li>
                                     <li><a id="A4" href="~/Register.aspx" runat="server">Register</a></li>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a id="A8" href="~/Admin/Categories.aspx" runat="server">Categories</a></li>
+                                            <li><a id="A9" href="~/Admin/Products.aspx" runat="server">Products</a></li>
+                                            <li><a id="A10" href="~/Admin/Orders.aspx" runat="server">Orders</a></li>
+                                            <li><a id="A11" href="~/Admin/Contacts.aspx" runat="server">Contacts</a></li>
+                                            <li><a id="A12" href="~/Admin/Accounts.aspx" runat="server">Accounts</a></li>
+                                            <li><a id="A14" href="~/Admin/Timesheets.aspx" runat="server">Timesheets</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Management <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a id="A20" href="~/Admin/Management/Employees.aspx" runat="server">Employees</a></li>
+                                            <li><a id="A15" href="~/Admin/Management/DataExport.aspx" runat="server">Date Export</a></li>
+                                            <li><a id="A2" href="~/Admin/Management/Reports.aspx" runat="server">Reports</a></li>
+                                        </ul>
+                                    </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>&nbsp;My Account <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
@@ -168,7 +175,6 @@
                         </div>
                     </asp:ContentPlaceHolder>
                     <asp:ContentPlaceHolder ID="ContentMain" runat="server">
-                        
                     </asp:ContentPlaceHolder>
                 </asp:ContentPlaceHolder>
             </div>
