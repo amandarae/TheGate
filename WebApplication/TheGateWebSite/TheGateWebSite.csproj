@@ -68,6 +68,8 @@
     <Content Include="Admin\ContactDetails.aspx" />
     <Content Include="Admin\Accounts.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
+    <Content Include="Admin\EmployeeDetails.aspx" />
+    <Content Include="Admin\Employees.aspx" />
     <Content Include="Admin\OrderDetails.aspx" />
     <Content Include="Admin\Orders.aspx" />
     <Content Include="Admin\ProductDetails.aspx" />
@@ -79,6 +81,22 @@
     <Content Include="css\bootstrap-responsive.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\brown.css" />
+    <Content Include="css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\jquery-ui-1.9.2.custom.css" />
+    <Content Include="css\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="css\slate.css" />
     <Content Include="css\flexslider.css" />
     <Content Include="css\font-awesome-ie7.css" />
@@ -184,6 +202,8 @@
     <Content Include="js\custom.js" />
     <Content Include="js\filter.js" />
     <Content Include="js\html5shim.js" />
+    <Content Include="js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="js\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="js\jquery.cslider.js" />
     <Content Include="js\jquery.flexslider-min.js" />
     <Content Include="js\jquery.isotope.js" />
@@ -233,6 +253,20 @@
     </Compile>
     <Compile Include="Admin\AccountDetails.aspx.designer.cs">
       <DependentUpon>AccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EmployeeDetails.aspx.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmployeeDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OrderDetails.aspx.cs">
       <DependentUpon>OrderDetails.aspx</DependentUpon>
