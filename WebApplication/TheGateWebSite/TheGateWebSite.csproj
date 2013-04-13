@@ -68,6 +68,8 @@
     <Content Include="Admin\ContactDetails.aspx" />
     <Content Include="Admin\Accounts.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
+    <Content Include="Admin\Timesheets.aspx" />
+    <Content Include="Admin\Management\DataExport.aspx" />
     <Content Include="Admin\Management\EmployeeDetails.aspx" />
     <Content Include="Admin\Management\Employees.aspx" />
     <Content Include="Admin\OrderDetails.aspx" />
@@ -254,6 +256,20 @@
     <Compile Include="Admin\AccountDetails.aspx.designer.cs">
       <DependentUpon>AccountDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Timesheets.aspx.cs">
+      <DependentUpon>Timesheets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Timesheets.aspx.designer.cs">
+      <DependentUpon>Timesheets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Management\DataExport.aspx.cs">
+      <DependentUpon>DataExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Management\DataExport.aspx.designer.cs">
+      <DependentUpon>DataExport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Management\EmployeeDetails.aspx.cs">
       <DependentUpon>EmployeeDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -390,10 +406,7 @@
     <Compile Include="Model\Product.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\TimeSheet.cs">
-      <DependentUpon>TheGate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\TimeSheetLine.cs">
+    <Compile Include="Model\TimeEntry.cs">
       <DependentUpon>TheGate.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderSuccess.aspx.cs">

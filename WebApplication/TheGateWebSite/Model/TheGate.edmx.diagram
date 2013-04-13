@@ -14,18 +14,14 @@
         <EntityTypeShape EntityType="TheGateModel.OrderState" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TheGateModel.OrderType" Width="1.5" PointX="12.25" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TheGateModel.Product" Width="1.5" PointX="12.5" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheGateModel.TimeSheetLine" Width="1.5" PointX="11.875" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheGateModel.TimeSheet" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="TheGateModel.FK_Accounts_1" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_Accounts_2" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_Orders_3" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_Products_0" ManuallyRouted="false" />
-        <AssociationConnector Association="TheGateModel.FK_TimeSheets_0" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_OrderLines_0" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_OrderLines_1" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_Orders_0" ManuallyRouted="false" />
         <AssociationConnector Association="TheGateModel.FK_Orders_1" ManuallyRouted="false" />
-        <AssociationConnector Association="TheGateModel.FK_TimeSheetLines_0" ManuallyRouted="false" />
         <EntityTypeShape EntityType="TheGateModel.aspnet_Membership" Width="1.5" PointX="8.25" PointY="9.375" />
         <EntityTypeShape EntityType="TheGateModel.aspnet_Roles" Width="1.5" PointX="13.875" PointY="10.875" />
         <EntityTypeShape EntityType="TheGateModel.aspnet_Users" Width="1.5" PointX="11.125" PointY="10.375" />
@@ -41,6 +37,8 @@
         <AssociationConnector Association="TheGateModel.FK_Orders_2" />
         <EntityTypeShape EntityType="TheGateModel.File" Width="1.5" PointX="14.5" PointY="1.25" />
         <AssociationConnector Association="TheGateModel.FK_Products_1" />
+        <EntityTypeShape EntityType="TheGateModel.TimeEntry" Width="1.5" PointX="10.375" PointY="6.125" />
+        <AssociationConnector Association="TheGateModel.FK_Time_01" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

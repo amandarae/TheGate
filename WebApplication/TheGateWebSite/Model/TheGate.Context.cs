@@ -34,12 +34,11 @@ namespace TheGateWebSite.Model
         public DbSet<OrderState> OrderStates { get; set; }
         public DbSet<OrderType> OrderTypes { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<TimeSheetLine> TimeSheetLines { get; set; }
-        public DbSet<TimeSheet> TimeSheets { get; set; }
         public DbSet<aspnet_Membership> aspnet_Membership { get; set; }
         public DbSet<aspnet_Roles> aspnet_Roles { get; set; }
         public DbSet<aspnet_Users> aspnet_Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<TimeEntry> TimeEntries { get; set; }
     }
 }

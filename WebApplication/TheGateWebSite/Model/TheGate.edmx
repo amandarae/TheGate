@@ -21,8 +21,7 @@
           <EntitySet Name="OrderStates" EntityType="TheGateModel.Store.OrderStates" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="OrderTypes" EntityType="TheGateModel.Store.OrderTypes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Products" EntityType="TheGateModel.Store.Products" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TimeSheetLines" EntityType="TheGateModel.Store.TimeSheetLines" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TimeSheets" EntityType="TheGateModel.Store.TimeSheets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeEntry" EntityType="TheGateModel.Store.TimeEntry" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK__aspnet_Me__UserI__66603565" Association="TheGateModel.Store.FK__aspnet_Me__UserI__66603565">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -99,13 +98,9 @@
             <End Role="Files" EntitySet="Files" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeSheetLines_0" Association="TheGateModel.Store.FK_TimeSheetLines_0">
-            <End Role="TimeSheets" EntitySet="TimeSheets" />
-            <End Role="TimeSheetLines" EntitySet="TimeSheetLines" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TimeSheets_0" Association="TheGateModel.Store.FK_TimeSheets_0">
+          <AssociationSet Name="FK_Time_0" Association="TheGateModel.Store.FK_Time_0">
             <End Role="Employees" EntitySet="Employees" />
-            <End Role="TimeSheets" EntitySet="TimeSheets" />
+            <End Role="TimeEntry" EntitySet="TimeEntry" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Accounts">
@@ -220,7 +215,7 @@
           <Property Name="contactID" Type="int" Nullable="false" />
           <Property Name="employeeNumber" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="salary" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="hourlyRate" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="hourlyRate" Type="decimal" Precision="6" Scale="2" />
           <Property Name="startDate" Type="datetime" Nullable="false" />
           <Property Name="endDate" Type="datetime" />
         </EntityType>
@@ -284,22 +279,15 @@
           <Property Name="productName" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="imageID" Type="int" />
         </EntityType>
-        <EntityType Name="TimeSheetLines">
+        <EntityType Name="TimeEntry">
           <Key>
-            <PropertyRef Name="timeSheetLineID" />
+            <PropertyRef Name="timeID" />
           </Key>
-          <Property Name="timeSheetLineID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="timeSheetID" Type="int" Nullable="false" />
+          <Property Name="timeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="date" Nullable="false" />
           <Property Name="hours" Type="decimal" Nullable="false" Precision="4" Scale="2" />
-        </EntityType>
-        <EntityType Name="TimeSheets">
-          <Key>
-            <PropertyRef Name="timeSheetID" />
-          </Key>
-          <Property Name="timeSheetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="varchar(max)" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
-          <Property Name="periodStart" Type="datetime" Nullable="false" />
-          <Property Name="periodEnd" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK__aspnet_Me__UserI__66603565">
           <End Role="aspnet_Users" Type="TheGateModel.Store.aspnet_Users" Multiplicity="1" />
@@ -531,26 +519,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TimeSheetLines_0">
-          <End Role="TimeSheets" Type="TheGateModel.Store.TimeSheets" Multiplicity="1" />
-          <End Role="TimeSheetLines" Type="TheGateModel.Store.TimeSheetLines" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TimeSheets">
-              <PropertyRef Name="timeSheetID" />
-            </Principal>
-            <Dependent Role="TimeSheetLines">
-              <PropertyRef Name="timeSheetID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TimeSheets_0">
+        <Association Name="FK_Time_0">
           <End Role="Employees" Type="TheGateModel.Store.Employees" Multiplicity="1" />
-          <End Role="TimeSheets" Type="TheGateModel.Store.TimeSheets" Multiplicity="*" />
+          <End Role="TimeEntry" Type="TheGateModel.Store.TimeEntry" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="employeeID" />
             </Principal>
-            <Dependent Role="TimeSheets">
+            <Dependent Role="TimeEntry">
               <PropertyRef Name="employeeID" />
             </Dependent>
           </ReferentialConstraint>
@@ -569,8 +545,6 @@
           <EntitySet Name="OrderStates" EntityType="TheGateModel.OrderState" />
           <EntitySet Name="OrderTypes" EntityType="TheGateModel.OrderType" />
           <EntitySet Name="Products" EntityType="TheGateModel.Product" />
-          <EntitySet Name="TimeSheetLines" EntityType="TheGateModel.TimeSheetLine" />
-          <EntitySet Name="TimeSheets" EntityType="TheGateModel.TimeSheet" />
           <AssociationSet Name="FK_Accounts_1" Association="TheGateModel.FK_Accounts_1">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Accounts" EntitySet="Accounts" />
@@ -587,10 +561,6 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeSheets_0" Association="TheGateModel.FK_TimeSheets_0">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="TimeSheets" EntitySet="TimeSheets" />
-          </AssociationSet>
           <AssociationSet Name="FK_OrderLines_0" Association="TheGateModel.FK_OrderLines_0">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderLines" EntitySet="OrderLines" />
@@ -606,10 +576,6 @@
           <AssociationSet Name="FK_Orders_1" Association="TheGateModel.FK_Orders_1">
             <End Role="OrderStates" EntitySet="OrderStates" />
             <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TimeSheetLines_0" Association="TheGateModel.FK_TimeSheetLines_0">
-            <End Role="TimeSheets" EntitySet="TimeSheets" />
-            <End Role="TimeSheetLines" EntitySet="TimeSheetLines" />
           </AssociationSet>
           <EntitySet Name="aspnet_Membership" EntityType="TheGateModel.aspnet_Membership" />
           <EntitySet Name="aspnet_Roles" EntityType="TheGateModel.aspnet_Roles" />
@@ -655,6 +621,11 @@
           <AssociationSet Name="FK_Products_1" Association="TheGateModel.FK_Products_1">
             <End Role="File" EntitySet="Files" />
             <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="TimeEntries" EntityType="TheGateModel.TimeEntry" />
+          <AssociationSet Name="FK_Time_01" Association="TheGateModel.FK_Time_01">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="TimeEntry" EntitySet="TimeEntries" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
@@ -708,11 +679,11 @@
           <Property Name="contactID" Type="Int32" Nullable="false" />
           <Property Name="employeeNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="salary" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="hourlyRate" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="hourlyRate" Type="Decimal" Precision="6" Scale="2" />
           <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="endDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="TimeSheets" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="Employees" ToRole="TimeSheets" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Employees_0" FromRole="Employee" ToRole="Contact" />
+          <NavigationProperty Name="TimeEntries" Relationship="TheGateModel.FK_Time_01" FromRole="Employee" ToRole="TimeEntry" />
         </EntityType>
         <EntityType Name="OrderLine">
           <Key>
@@ -776,26 +747,6 @@
           <Property Type="Int32" Name="imageID" />
           <NavigationProperty Name="File" Relationship="TheGateModel.FK_Products_1" FromRole="Product" ToRole="File" />
         </EntityType>
-        <EntityType Name="TimeSheetLine">
-          <Key>
-            <PropertyRef Name="timeSheetLineID" />
-          </Key>
-          <Property Name="timeSheetLineID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="timeSheetID" Type="Int32" Nullable="false" />
-          <Property Name="hours" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
-          <NavigationProperty Name="TimeSheet" Relationship="TheGateModel.FK_TimeSheetLines_0" FromRole="TimeSheetLines" ToRole="TimeSheets" />
-        </EntityType>
-        <EntityType Name="TimeSheet">
-          <Key>
-            <PropertyRef Name="timeSheetID" />
-          </Key>
-          <Property Name="timeSheetID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="employeeID" Type="Int32" Nullable="false" />
-          <Property Name="periodStart" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="periodEnd" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Employee" Relationship="TheGateModel.FK_TimeSheets_0" FromRole="TimeSheets" ToRole="Employees" />
-          <NavigationProperty Name="TimeSheetLines" Relationship="TheGateModel.FK_TimeSheetLines_0" FromRole="TimeSheets" ToRole="TimeSheetLines" />
-        </EntityType>
         <Association Name="FK_Accounts_1">
           <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
           <End Role="Accounts" Type="TheGateModel.Account" Multiplicity="*" />
@@ -841,18 +792,6 @@
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="categoryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TimeSheets_0">
-          <End Role="Employees" Type="TheGateModel.Employee" Multiplicity="1" />
-          <End Role="TimeSheets" Type="TheGateModel.TimeSheet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employees">
-              <PropertyRef Name="employeeID" />
-            </Principal>
-            <Dependent Role="TimeSheets">
-              <PropertyRef Name="employeeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -903,18 +842,6 @@
             </Principal>
             <Dependent Role="Orders">
               <PropertyRef Name="state" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TimeSheetLines_0">
-          <End Role="TimeSheets" Type="TheGateModel.TimeSheet" Multiplicity="1" />
-          <End Role="TimeSheetLines" Type="TheGateModel.TimeSheetLine" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TimeSheets">
-              <PropertyRef Name="timeSheetID" />
-            </Principal>
-            <Dependent Role="TimeSheetLines">
-              <PropertyRef Name="timeSheetID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1116,6 +1043,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TimeEntry">
+          <Key>
+            <PropertyRef Name="timeID" />
+          </Key>
+          <Property Type="Int32" Name="timeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="hours" Nullable="false" Precision="4" Scale="2" />
+          <Property Type="String" Name="category" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="employeeID" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="TheGateModel.FK_Time_01" FromRole="TimeEntry" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Time_01">
+          <End Type="TheGateModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="TheGateModel.TimeEntry" Role="TimeEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="TimeEntry">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1226,25 +1176,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TimeSheetLines">
-            <EntityTypeMapping TypeName="TheGateModel.TimeSheetLine">
-              <MappingFragment StoreEntitySet="TimeSheetLines">
-                <ScalarProperty Name="timeSheetLineID" ColumnName="timeSheetLineID" />
-                <ScalarProperty Name="timeSheetID" ColumnName="timeSheetID" />
-                <ScalarProperty Name="hours" ColumnName="hours" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TimeSheets">
-            <EntityTypeMapping TypeName="TheGateModel.TimeSheet">
-              <MappingFragment StoreEntitySet="TimeSheets">
-                <ScalarProperty Name="timeSheetID" ColumnName="timeSheetID" />
-                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
-                <ScalarProperty Name="periodStart" ColumnName="periodStart" />
-                <ScalarProperty Name="periodEnd" ColumnName="periodEnd" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="aspnet_Membership">
             <EntityTypeMapping TypeName="TheGateModel.aspnet_Membership">
               <MappingFragment StoreEntitySet="aspnet_Membership">
@@ -1328,6 +1259,17 @@
                 <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeEntries">
+            <EntityTypeMapping TypeName="TheGateModel.TimeEntry">
+              <MappingFragment StoreEntitySet="TimeEntry">
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="timeID" ColumnName="timeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -16,7 +16,7 @@ namespace TheGateWebSite.Model
     {
         public Employee()
         {
-            this.TimeSheets = new HashSet<TimeSheet>();
+            this.TimeEntries = new HashSet<TimeEntry>();
         }
     
         public int employeeID { get; set; }
@@ -27,7 +27,7 @@ namespace TheGateWebSite.Model
         public System.DateTime startDate { get; set; }
         public Nullable<System.DateTime> endDate { get; set; }
     
-        public virtual ICollection<TimeSheet> TimeSheets { get; set; }
         public virtual Contact Contact { get; set; }
+        public virtual ICollection<TimeEntry> TimeEntries { get; set; }
     }
 }

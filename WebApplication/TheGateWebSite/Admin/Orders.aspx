@@ -18,7 +18,7 @@
                 <asp:UpdatePanel ID="UpdatePanelOrders" runat="server">
                     <ContentTemplate>
                         <div class="navbar-form">
-                            <asp:HyperLink ID="hyperlinkAddContact" runat="server" Text="Add Contact" CssClass="btn btn-primary" NavigateUrl="ContactDetails.aspx" />
+                            <asp:HyperLink ID="hyperlinkAddContact" runat="server" Text="Add Order" CssClass="btn btn-primary" NavigateUrl="OrderDetails.aspx" />
                             <div class="pull-right">
                                 <asp:TextBox ID="textboxSearchQuery" runat="server" />
                                 <asp:Button ID="buttonSearch" runat="server" Text="Search" CssClass="btn" OnClick="buttonSearch_Click" />
