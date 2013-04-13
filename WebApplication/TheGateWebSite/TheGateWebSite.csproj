@@ -45,6 +45,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,6 +69,7 @@
     <Content Include="Admin\ContactDetails.aspx" />
     <Content Include="Admin\Accounts.aspx" />
     <Content Include="Admin\AccountDetails.aspx" />
+    <Content Include="Admin\Management\Reports.aspx" />
     <Content Include="Admin\Timesheets.aspx" />
     <Content Include="Admin\Management\DataExport.aspx" />
     <Content Include="Admin\Management\EmployeeDetails.aspx" />
@@ -255,6 +257,13 @@
     </Compile>
     <Compile Include="Admin\AccountDetails.aspx.designer.cs">
       <DependentUpon>AccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Management\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Management\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Timesheets.aspx.cs">
       <DependentUpon>Timesheets.aspx</DependentUpon>
