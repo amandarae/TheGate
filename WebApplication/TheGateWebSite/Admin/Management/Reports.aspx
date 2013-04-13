@@ -29,7 +29,7 @@
                 </div>
         </div>
         <div class="span6" style="background: #fff;">
-            <h3>Products - Quanity on Hand</h3>
+            <h3>Orders by State</h3>
             <div style="text-align: center;">
             <asp:Chart ID="Chart2" runat="server" DataSourceID="LinqDataSource2" Height="400px" Width="400px">
                 <Series>
@@ -40,6 +40,10 @@
                     <asp:ChartArea Name="ChartArea1">
                     </asp:ChartArea>
                 </ChartAreas>
+                <Legends>
+                    <asp:Legend LegendStyle="Table">
+                    </asp:Legend>
+                </Legends>
             </asp:Chart>
             <asp:LinqDataSource ID="LinqDataSource2" runat="server" ContextTypeName="TheGateWebSite.Model.TheGateContext" EntityTypeName="" Select="new (key as state, it as Orders, Count() as Count)" TableName="Orders" GroupBy="state">
             </asp:LinqDataSource>
