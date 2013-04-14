@@ -42,8 +42,8 @@ namespace TheGateWebSite
             ProductOnHandValue = checkstock();
             if (Product.onHand <= 0)
             {
-                BtnAdd.Enabled = false;
-                TextBoxQuantity.Enabled = false;
+                BtnAdd.Visible = false;
+                TextBoxQuantity.Visible = false;
             }
             if (Product.imageID != null)
                 PictureValue = "Handlers/Image.ashx?ID=" + Product.imageID.ToString();

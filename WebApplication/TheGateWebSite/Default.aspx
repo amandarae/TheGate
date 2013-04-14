@@ -10,32 +10,25 @@
 
             <div id="da-slider" class="da-slider">
                 <div class="da-slide">
-                    <h2>Classic boardgames</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
-                    <a href="#" class="da-link">Read more</a>
+                    <h2 style="margin-right:250px;font-size: 24px; text-wrap:normal;">20" Deluxe Wooden Chess/Checkers Set with Drawers</h2>
+                    <p>20" deluxe wooden chess set with inlaid wood squares, wooden chess and checker pieces</p>
+                    <a href="/ItemDetail.aspx?productID=5" class="da-link">View</a>
                     <div class="da-img">
-                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
+                        <img src="/Handlers/Image.ashx?ID=8" alt="image01" style="max-height:200px; max-width: 200px;" /></div>
                 </div>
                 <div class="da-slide">
-                    <h2>Electronic Games</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
-                    <a href="#" class="da-link">Read more</a>
+                    <h2 style="margin-right:250px;font-size: 24px; text-wrap:normal;">MONOPOLY: Star Trek Klingon Limited Edition</h2>
+                    <p>You have been chosen to preserve the glory of the Empire! Control the galaxy with the might of Kahless and be immortalized in the Hall of Warriors. Victory shall be yours if you conquer all the systems within the galaxy. </p>
+                    <a href="/ItemDetail.aspx?productID=19" class="da-link">View</a>
                     <div class="da-img">
-                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
+                        <img src="/Handlers/Image.ashx?ID=21" alt="image01" style="max-height:200px; max-width: 200px;" /></div>
                 </div>
                 <div class="da-slide">
-                    <h2>Hand crafted sets</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
-                    <a href="#" class="da-link">Read more</a>
+                    <h2 style="margin-right:250px;font-size: 24px; text-wrap:normal;">Zombicide Board Game</h2>
+                    <p>In the pursuit of ever greater levels of productivity, man has TWISTED both plants and animals to his own ENDS. In so doing, we have inadvertently changed ourselves... </p>
+                    <a href="/ItemDetail.aspx?productID=18" class="da-link">View</a>
                     <div class="da-img">
-                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
-                </div>
-                <div class="da-slide">
-                    <h2>Customer Service</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula.</p>
-                    <a href="#" class="da-link">Read more</a>
-                    <div class="da-img">
-                        <img src="http://fpoimg.com/160x160?text=The%20Gate" alt="image01" /></div>
+                        <img src="/Handlers/Image.ashx?ID=20" alt="image01" style="max-height:200px; max-width: 200px;" /></div>
                 </div>
                 <nav class="da-arrows">
                     <span class="da-arrows-prev"></span>
@@ -45,9 +38,7 @@
 
             <!-- Slider ends -->
 
-            <div class="bor"></div>
-
-            <div class="main-content">
+<%--            <div class="main-content">
                 <div class="row">
                     <div class="span7">
                         <h2>Lorem ipsum dolor sit amet</h2>
@@ -69,28 +60,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
             <!-- CTA starts -->
 
             <div class="cta">
-                <div class="row">
-                    <div class="span9">
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="span9" style="margin-top: 10px;">
                         <!-- First line -->
-                        <p class="cbig">Lorem ipsum consectetur dolor sit amet, consectetur adipiscing.</p>
+                        <p class="cbig">Get an account now and order your favourite games online!</p>
                         <!-- Second line -->
-                        <p class="csmall">Duis vulputate consectetur malesuada eros nec odio consect eturegestas et netus et in dictum nisi vehicula.</p>
+                        <%--<p class="csmall">Duis vulputate consectetur malesuada eros nec odio consect eturegestas et netus et in dictum nisi vehicula.</p>--%>
                     </div>
                     <div class="span2">
                         <!-- Button -->
-                        <div class="button"><a href="#">Get A Free Trail</a></div>
+                        <div class="button"><a href="Register.aspx">Sign Up</a></div>
                     </div>
                 </div>
             </div>
 
             <!-- CTA Ends -->
 
-            <!-- Features list. Note down the class name before editing. -->
+            <%--<!-- Features list. Note down the class name before editing. -->
             <div class="row">
                 <div class="span3">
                     <div class="afeature">
@@ -130,51 +121,47 @@
                 </div>
             </div>
 
-            <!-- Features ends -->
-
-            <div class="bor"></div>
+            <!-- Features ends -->--%>
 
             <!-- Testimonials -->
 
             <div class="testimonial">
                 <div class="container">
+                    <h4>Customer Testimonials</h4>
                     <div class="row">
                         <div class="span4">
                             <!-- Testimonial #1 -->
                             <div class="test">
-                                Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.
+                                The Gate has always been my home for board games.  Their great selection keeps me coming back!
                             </div>
                             <div class="test-arrow"></div>
-                            <div class="tauth"><i class="icon-user"></i>Ravi, <span class="color">Google</span></div>
+                            <div class="tauth"><i class="icon-user"></i> Ravi, <span class="color">Customer</span></div>
                         </div>
 
                         <div class="span4">
                             <!-- Testimonial #2 -->
                             <div class="test">
-                                Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.
+                                The staff at the Gate are so helpful and always provide the right games to get the family.
                             </div>
                             <div class="test-arrow"></div>
-                            <div class="tauth"><i class="icon-user"></i>Ashok, <span class="color">Yahoo</span></div>
+                            <div class="tauth"><i class="icon-user"></i> Ashok, <span class="color">Customer</span></div>
                         </div>
 
                         <div class="span4">
                             <!-- Testimonial #3 -->
                             <div class="test">
-                                Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.
+                                If you want custom games this is the place.  The owner hand carves chess sets!
                             </div>
                             <div class="test-arrow"></div>
-                            <div class="tauth"><i class="icon-user"></i>Santy, <span class="color">Facebook</span></div>
+                            <div class="tauth"><i class="icon-user"></i> Santy, <span class="color">Customer</span></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bor"></div>
-
             <!-- Recent post starts. Note down the class name before editing. -->
 
             <div class="rposts">
-                <h4>Recent Posts</h4>
                 <div class="row">
                     <div class="span6">
 
@@ -182,24 +169,26 @@
                         <div class="rpost1">
                             <!-- Image -->
                             <div class="rimg">
-                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
+                                <img src="/Handlers/Image.ashx?ID=14" alt="" />
                             </div>
                             <!-- Title & Para -->
                             <div class="rdetails">
-                                <h5>Lorem ipsum</h5>
-                                <p>Duis vulputate consectetur malesuada et in dictum nisi vehicula.</p>
+                                <h5>Quip It! DVD Board Game</h5>
+                                <p>The uncommonly funny dvd game. Out of print, new in the shrink wrap.</p>
                             </div>
                         </div>
 
 
                         <!-- Recent post 2. Class name should be "rpost2" -->
                         <div class="rpost2">
+                            <!-- Image -->
                             <div class="rimg">
-                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
+                                <img src="/Handlers/Image.ashx?ID=22" alt="" />
                             </div>
+                            <!-- Title & Para -->
                             <div class="rdetails">
-                                <h5>Lorem ipsum</h5>
-                                <p>Duis vulputate consectetur malesuada et netus et in dictum nisi vehicula.</p>
+                                <h5>Risk Board Game Starcraft Collector's Edition</h5>
+                                <p>The Koprulu Sector is being ravaged by war. You must stand against your enemies as one of the three powerful races.</p>
                             </div>
                         </div>
 
@@ -208,26 +197,30 @@
                     <div class="span6">
 
 
-                        <!-- Recent post 3. Class name should be "rpost1" -->
+                        <!-- Recent post 1. Class name should be "rpost1" -->
                         <div class="rpost1">
+                            <!-- Image -->
                             <div class="rimg">
-                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
+                                <img src="/Handlers/Image.ashx?ID=24" alt="" />
                             </div>
+                            <!-- Title & Para -->
                             <div class="rdetails">
-                                <h5>Lorem ipsum</h5>
-                                <p>Duis vulputate consectetur malesuada et in dictum nisi vehicula.</p>
+                                <h5>A Game of Thrones the Board Game: 2nd Edition</h5>
+                                <p>King Robert Baratheon is dead, and the lands of Westeros brace for battle. Can you claim the Iron Throne?</p>
                             </div>
                         </div>
 
 
-                        <!-- Recent post 4. Class name should be "rpost2" -->
+                        <!-- Recent post 2. Class name should be "rpost2" -->
                         <div class="rpost2">
+                            <!-- Image -->
                             <div class="rimg">
-                                <img src="http://fpoimg.com/220x130?text=The%20Gate" alt="" />
+                                <img src="/Handlers/Image.ashx?ID=7" alt="" />
                             </div>
+                            <!-- Title & Para -->
                             <div class="rdetails">
-                                <h5>Lorem ipsum</h5>
-                                <p>Duis vulputate consectetur malesuada et netus et in dictum nisi vehicula.</p>
+                                <h5>Wooden Black Bird Chinese Checkers Board</h5>
+                                <p>Wooden Chinese checkers game board, 45 by 45 cm, playing surface is 40 x 40 cm. </p>
                             </div>
                         </div>
 

@@ -136,16 +136,16 @@ namespace TheGateWebSite
                 Dictionary<string, string> dict = new Dictionary<string, string>();
                 dict.Add("Col0", pair.Key);
                 dict.Add("Col1", Product.productName);
-                dict.Add("Col2", Convert.ToString(Product.price));
+                dict.Add("Col2", Product.price.ToString("C2"));
                 dict.Add("Col3", pair.Value.ToString());
-                dict.Add("Col4", Convert.ToString(pair.Value * Product.price));
+                dict.Add("Col4", (pair.Value * Product.price).ToString("C2"));
                 dList.Add(dict);
                 gt += Convert.ToDouble(pair.Value * Product.price);
             }
 
             ShoppingCartLV.DataSource = dList;
             ShoppingCartLV.DataBind();
-            GrandTotal = "Grand Total:  $" + gt;
+            GrandTotal = "Grand Total: " + gt.ToString("C2");
         }
 
         protected void sSaveBtn_Click(object sender, EventArgs e)

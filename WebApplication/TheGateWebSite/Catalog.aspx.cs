@@ -153,7 +153,7 @@ namespace TheGateWebSite
                     ProductList.DataBind();
                     Session["filterOnOff"] = "true";
                     break;
-                case "clearFilter": 
+                case "clearFilter":
                     Session["filterOnOff"] = "false";
                     LoadProducts();
                     break;
