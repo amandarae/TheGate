@@ -13,7 +13,8 @@ namespace TheGateWebSite.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadDropDowns();
+            if (!Page.IsPostBack)
+                LoadDropDowns();
         }
 
         protected void ButtonAddProduct_Click(object sender, EventArgs e)

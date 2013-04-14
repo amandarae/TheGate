@@ -45,7 +45,7 @@ namespace TheGateWebSite
         private void LoadProductsSearch()
         {
             string productSearch = Session["searchField"].ToString();
-            ProductList.DataSource = theGateContext.Products.Where(p => p.productName == productSearch).ToList();
+            ProductList.DataSource = theGateContext.Products.Where(p => p.productName.Contains(productSearch)).ToList();
             ProductList.DataBind();
         }
 
@@ -91,34 +91,34 @@ namespace TheGateWebSite
         {
             switch (e.CommandName.ToString())
             {
-                case "ItemDetail":
-                    Response.Redirect("ItemDetail.aspx?productID=" + e.CommandArgument);
-                    break;
+                //case "ItemDetail":
+                //    Response.Redirect("ItemDetail.aspx?productID=" + e.CommandArgument);
+                //    break;
                 case "AddItem":
-                    TextBox tb = (TextBox)e.Item.FindControl("TextBoxQuantity");
-                    if (tb.Text == "")
-                        break;
-                    int quantity = Convert.ToInt32(tb.Text);
+                    //TextBox tb = (TextBox)e.Item.FindControl("TextBoxQuantity");
+                    //if (tb.Text == "")
+                    //    break;
+                    //int quantity = Convert.ToInt32(tb.Text);
                     if (Session["cartHashTable"] != null)
                     {
                         Dictionary<string, int> ht = (Dictionary<string, int>)Session["cartHashTable"];
                         if (ht.ContainsKey(e.CommandArgument.ToString()))
                         {
                             int prAmt = (int)ht[e.CommandArgument.ToString()];
-                            prAmt += quantity;
+                            prAmt += 1;
                             ht[e.CommandArgument.ToString()] = prAmt;
                             Session["cartHashTable"] = ht;
                         }
                         else
                         {
-                            ht.Add(e.CommandArgument.ToString(), quantity);
+                            ht.Add(e.CommandArgument.ToString(), 1);
                             Session["cartHashTable"] = ht;
                         }
                     }
                     else
                     {
                         Dictionary<string, int> ht = new Dictionary<string, int>();
-                        ht.Add(e.CommandArgument.ToString(), quantity);
+                        ht.Add(e.CommandArgument.ToString(), 1);
                         Session["cartHashTable"] = ht;
                     }
                     Response.Redirect("Cart.aspx");
@@ -138,6 +138,7 @@ namespace TheGateWebSite
         protected void ClearSearchBtn_Click(object sender, EventArgs e)
         {
             Session["searchOnOff"] = "false";
+            SearchBoxName.Text = string.Empty;
             LoadProducts();
         }
 
@@ -152,7 +153,7 @@ namespace TheGateWebSite
                     ProductList.DataBind();
                     Session["filterOnOff"] = "true";
                     break;
-                case "clearFilter":
+                case "clearFilter": 
                     Session["filterOnOff"] = "false";
                     LoadProducts();
                     break;

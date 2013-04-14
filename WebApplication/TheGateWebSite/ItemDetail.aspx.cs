@@ -40,6 +40,11 @@ namespace TheGateWebSite
             ProductDescriptionValue = Product.description;
             ProductPriceValue = "Price: $" + Product.price.ToString();
             ProductOnHandValue = checkstock();
+            if (Product.onHand <= 0)
+            {
+                BtnAdd.Enabled = false;
+                TextBoxQuantity.Enabled = false;
+            }
             if (Product.imageID != null)
                 PictureValue = "Handlers/Image.ashx?ID=" + Product.imageID.ToString();
             else

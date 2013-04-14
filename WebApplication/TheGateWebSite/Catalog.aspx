@@ -64,7 +64,7 @@
         <ItemTemplate>
             <div class="element">
                 <asp:Panel ID="ImageNotNull" runat="server" Visible='<%# Eval("imageID") != null %>'>
-                    <a href="Handlers/Image.ashx?ID=<%# Eval("imageID") %>" class="prettyPhoto[pp_gal]">
+                    <a href="ItemDetail.aspx?productID=<%# Eval("productID") %>" class="prettyPhoto[pp_gal]">
                         <img src="Handlers/Image.ashx?ID=<%# Eval("imageID") %>" alt="" />
                     </a>
                 </asp:Panel>
@@ -76,12 +76,12 @@
                     <p>Price: $<%# Eval("price").ToString() %></p>
                 </div>
                 <div class="controls">
-                    Quantity:
+                    <%--Quantity:
                     <asp:TextBox runat="server" ID="TextBoxQuantity" CssClass="input-mini" MaxLength="8" Style="width: 30px; height: 15px; margin-top: 10px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="revQuantity" ControlToValidate="TextBoxQuantity" runat="server"
-                        ErrorMessage="*" ValidationGroup="ValidationGroupAddProduct" ValidationExpression="[0-9]{0,8}" ForeColor="Red" />
-                    <asp:Button ID="BtnAdd" CommandName="AddItem" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Add" ToolTip="Add" CssClass="btn btn-mini" ValidationGroup="ValidationGroupAddProduct" />
-                    <asp:Button ID="BtnDetail" CommandName="ItemDetail" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Detail" ToolTip="Detail" CssClass="btn btn-mini" />
+                        ErrorMessage="*" ValidationGroup="ValidationGroupAddProduct" ValidationExpression="[0-9]{0,8}" ForeColor="Red" />--%>
+                    <asp:Button ID="BtnAdd" CommandName="AddItem" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Add to Cart" ToolTip="Add" CssClass="btn btn-mini" ValidationGroup="ValidationGroupAddProduct" />
+                    <%--<asp:Button ID="BtnDetail" CommandName="ItemDetail" CommandArgument='<%# Bind("productID") %>' runat="server" Text="Detail" ToolTip="Detail" CssClass="btn btn-mini" />--%>
                 </div>
             </div>
         </ItemTemplate>
