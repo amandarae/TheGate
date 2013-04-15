@@ -31,7 +31,7 @@ namespace TheGateWebSite
 
         private void LoadProducts()
         {
-            ProductList.DataSource = theGateContext.Products.OrderBy(p => p.productID).ToList();
+            ProductList.DataSource = theGateContext.Products.Where(p => p.active == true).OrderBy(p => p.productID).ToList();
             ProductList.DataBind();
 
         }
@@ -45,14 +45,14 @@ namespace TheGateWebSite
         private void LoadProductsSearch()
         {
             string productSearch = Session["searchField"].ToString();
-            ProductList.DataSource = theGateContext.Products.Where(p => p.productName.Contains(productSearch)).ToList();
+            ProductList.DataSource = theGateContext.Products.Where(p => p.productName.Contains(productSearch) && p.active == true).ToList();
             ProductList.DataBind();
         }
 
         private void LoadFilter()
         {
             int filterID = Convert.ToInt32(Session["filterID"].ToString());
-            ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID).ToList();
+            ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID && p.active == true).ToList();
             ProductList.DataBind();
         }
 
@@ -149,7 +149,7 @@ namespace TheGateWebSite
                 case "Filter":
                     int filterID = Convert.ToInt32(e.CommandArgument.ToString());
                     Session["filterID"] = filterID;
-                    ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID).ToList();
+                    ProductList.DataSource = theGateContext.Products.Where(p => p.categoryID == filterID && p.active == true).ToList();
                     ProductList.DataBind();
                     Session["filterOnOff"] = "true";
                     break;

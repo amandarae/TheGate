@@ -27,6 +27,7 @@ namespace TheGateWebSite.Model
         public System.DateTime dateMade { get; set; }
         public Nullable<System.DateTime> dateShipped { get; set; }
         public Nullable<System.DateTime> dateRecieved { get; set; }
+        public Nullable<bool> paid { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }

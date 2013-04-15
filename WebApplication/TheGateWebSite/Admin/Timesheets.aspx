@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/css/jquery-ui-1.9.2.custom.css" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="PageTitleText" runat="server">
-    Products
+    My Timesheets
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="PageShortDescription" runat="server">
-    <p>Add and manage products.</p>
+    <p>Add and manage your own time entries.</p>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
     <div class="row">

@@ -88,6 +88,11 @@ namespace TheGateWebSite.Admin
                 ButtonOrderRecieved.Enabled = false;
             }
 
+            if (orderA.paid.GetValueOrDefault())
+            {
+                ButtonOrderPaid.CssClass = "btn btn-success";
+                ButtonOrderPaid.Enabled = false;
+            }
             LoadOrderDetails();
 
         }
@@ -304,6 +309,13 @@ namespace TheGateWebSite.Admin
                 default:
                     break;
             }
+        }
+
+        protected void ButtonOrderPaid_Click(object sender, EventArgs e)
+        {
+            orderA.paid = true;
+            theGateContext.SaveChanges();
+            Response.Redirect("OrderDetails.aspx?id=" + Request.QueryString["id"]);
         }
     }
 }

@@ -115,6 +115,7 @@
                                     <li><a id="A4" href="~/Register.aspx" runat="server">Register</a></li>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
+                                    <% if (System.Web.Security.Roles.IsUserInRole(System.Web.Security.Membership.GetUser().UserName, "Employees")) { %>
                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a id="A8" href="~/Admin/Categories.aspx" runat="server">Categories</a></li>
@@ -125,6 +126,8 @@
                                             <li><a id="A14" href="~/Admin/Timesheets.aspx" runat="server">Timesheets</a></li>
                                         </ul>
                                     </li>
+                                    <% } %>
+                                    <% if (System.Web.Security.Roles.IsUserInRole(System.Web.Security.Membership.GetUser().UserName, "Administrators")) { %>
                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Management <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a id="A20" href="~/Admin/Management/Employees.aspx" runat="server">Employees</a></li>
@@ -132,6 +135,7 @@
                                             <li><a id="A2" href="~/Admin/Management/Reports.aspx" runat="server">Reports</a></li>
                                         </ul>
                                     </li>
+                                    <% } %>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>&nbsp;My Account <b class="caret"></b></a>
                                         <ul class="dropdown-menu">

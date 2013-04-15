@@ -251,6 +251,7 @@
           <Property Name="dateMade" Type="datetime" Nullable="false" />
           <Property Name="dateShipped" Type="datetime" />
           <Property Name="dateRecieved" Type="datetime" />
+          <Property Name="paid" Type="bit" />
         </EntityType>
         <EntityType Name="OrderStates">
           <Key>
@@ -278,6 +279,7 @@
           <Property Name="onOrder" Type="int" Nullable="false" />
           <Property Name="productName" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="imageID" Type="int" />
+          <Property Name="active" Type="bit" />
         </EntityType>
         <EntityType Name="TimeEntry">
           <Key>
@@ -714,6 +716,7 @@
           <NavigationProperty Name="OrderType" Relationship="TheGateModel.FK_Orders_0" FromRole="Orders" ToRole="OrderTypes" />
           <NavigationProperty Name="OrderState" Relationship="TheGateModel.FK_Orders_1" FromRole="Orders" ToRole="OrderStates" />
           <NavigationProperty Name="Contact" Relationship="TheGateModel.FK_Orders_2" FromRole="Order" ToRole="Contact" />
+          <Property Type="Boolean" Name="paid" />
         </EntityType>
         <EntityType Name="OrderState">
           <Key>
@@ -746,6 +749,7 @@
           <Property Type="String" Name="productName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="imageID" />
           <NavigationProperty Name="File" Relationship="TheGateModel.FK_Products_1" FromRole="Product" ToRole="File" />
+          <Property Type="Boolean" Name="active" />
         </EntityType>
         <Association Name="FK_Accounts_1">
           <End Role="Addresses" Type="TheGateModel.Address" Multiplicity="0..1" />
@@ -1135,6 +1139,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="TheGateModel.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="paid" ColumnName="paid" />
                 <ScalarProperty Name="orderID" ColumnName="orderID" />
                 <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="state" ColumnName="state" />
@@ -1165,6 +1170,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="TheGateModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="imageID" ColumnName="imageID" />
                 <ScalarProperty Name="productName" ColumnName="productName" />
                 <ScalarProperty Name="productID" ColumnName="productID" />

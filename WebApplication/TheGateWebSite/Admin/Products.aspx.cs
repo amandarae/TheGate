@@ -73,7 +73,7 @@ namespace TheGateWebSite.Admin
 
         private void LoadProducts()
         {
-            ListViewProducts.DataSource = theGateContext.Products.OrderBy(p => p.productID).ToList();
+            ListViewProducts.DataSource = theGateContext.Products.Where(p => p.active == true).OrderBy(p => p.productID).ToList();
             ListViewProducts.DataBind();
         }
 
@@ -125,7 +125,7 @@ namespace TheGateWebSite.Admin
                             return;
                         }
 
-                        theGateContext.Products.Remove(product);
+                        product.active = false;
                         theGateContext.SaveChanges();
                         ShowSuccess("Product item successfully deleted.");
 

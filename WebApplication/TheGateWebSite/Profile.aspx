@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentMain" runat="server">
     <div class="row">
-        <div class="span8">
+        <div class="span12">
             <div class="review">
                 <div class="form-horizontal">
                     <fieldset>
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="span4">
+        <%--<div class="span4">
             <asp:Panel ID="pnlAddressBilling" runat="server" CssClass="service">
                 <h4>Billing Address</h4>
                 <asp:HyperLink ID="lnkBillingAddress" runat="server" Text="Add a billing address" CssClass="btn btn-small" />
@@ -91,7 +91,7 @@
                 <h4>Shipping Address</h4>
                 <asp:HyperLink ID="lnkShippingAddress" runat="server" Text="Add a billing address" CssClass="btn btn-small" />
             </asp:Panel>
-        </div>
+        </div>--%>
     </div>
     <div class="bor"></div>
     <div class="row">

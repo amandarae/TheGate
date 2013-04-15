@@ -177,6 +177,8 @@
                         </asp:ListView>
                     <p class="pull-right">
                         <strong>Order Total: </strong><asp:Literal ID="ltOrderTotal" runat="server" />
+                        <asp:Button ID="ButtonOrderPaid" runat="server" CssClass="btn btn-inverse"
+                            ValidationGroup="ValidationGroupOrder" CausesValidation="true" Text="Order Paid" OnClick="ButtonOrderPaid_Click" />
                     </p>
                     <p class="clearfix"></p>
                 </asp:Panel>

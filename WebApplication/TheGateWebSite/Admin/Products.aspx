@@ -138,7 +138,7 @@
                         </asp:ListView>
                         <div class="pagination">
                             <site:UnorderedListDataPager ID="DataPagerProducts" runat="server" PagedControlID="ListViewProducts"
-                                PageSize="25" OnPreRender="DataPagerProducts_PreRender">
+                                PageSize="10" OnPreRender="DataPagerProducts_PreRender">
                                 <Fields>
                                     <asp:NextPreviousPagerField ShowNextPageButton="false" ShowFirstPageButton="True" FirstPageText="&laquo;" PreviousPageText="&lsaquo;" />
                                     <asp:NumericPagerField ButtonCount="10" PreviousPageText="&hellip;" NextPageText="&hellip;" />

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="PageTitleText" runat="server">
-    Contact Details
+    Account Details
 </asp:Content>
 <asp:Content ID="COntent5" ContentPlaceHolderID="PageShortDescription" runat="server">
 </asp:Content>

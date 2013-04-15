@@ -40,7 +40,6 @@
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Has User Account</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,7 +56,6 @@
                                     <td><%# Eval("lastName") %></td>
                                     <td><%# Eval("email") %></td>
                                     <td><%# Eval("phone") %></td>
-                                    <td></td>
                                 </tr>
                             </ItemTemplate>
                             <EmptyDataTemplate>

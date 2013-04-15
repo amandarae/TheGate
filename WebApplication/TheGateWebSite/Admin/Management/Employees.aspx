@@ -114,7 +114,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="text-align: center;"><%# Eval("employeeNumber") %></td>
-                                    <td><%# Eval("contactID") %></td>
+                                    <td><%# GetContactName(Container.DataItem as TheGateWebSite.Model.Employee) %></td>
                                     <td style="text-align: center;"><%# Eval("salary").ToString() %></td>
                                     <td style="text-align: center;"><%# Eval("hourlyRate").ToString() %></td>
                                     <td style="text-align: left;">

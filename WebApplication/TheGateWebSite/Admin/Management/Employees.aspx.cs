@@ -17,6 +17,15 @@ namespace TheGateWebSite.Admin
                 LoadDropDowns();
         }
 
+        protected string GetContactName(Employee em)
+        {
+            var contact = theGateContext.Contacts.Where(c => c.contactID == em.contactID).FirstOrDefault();
+            if (contact != null)
+                return contact.firstName + " " + contact.lastName;
+            else
+                return string.Empty;
+        }
+
         protected void ButtonAddEmployee_Click(object sender, EventArgs e)
         {
             ClearAlerts();

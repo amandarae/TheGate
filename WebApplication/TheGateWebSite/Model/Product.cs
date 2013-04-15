@@ -27,6 +27,7 @@ namespace TheGateWebSite.Model
         public int onOrder { get; set; }
         public string productName { get; set; }
         public Nullable<int> imageID { get; set; }
+        public Nullable<bool> active { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }

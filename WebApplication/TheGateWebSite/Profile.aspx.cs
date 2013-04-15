@@ -27,15 +27,15 @@ namespace TheGateWebSite
             TextBoxEmail.Text = contact.email;
             txtContactPhone.Text = contact.phone;
 
-            if (contact.Address1 != null)
-            {
-                lnkBillingAddress.Text = "Edit billing address";
-            }
+            //if (contact.Address1 != null)
+            //{
+            //    lnkBillingAddress.Text = "Edit billing address";
+            //}
 
-            if (contact.Address != null)
-            {
-                lnkShippingAddress.Text = "Edit shipping address";
-            }
+            //if (contact.Address != null)
+            //{
+            //    lnkShippingAddress.Text = "Edit shipping address";
+            //}
         }
 
         private void ShowErrorMessage(string p)
